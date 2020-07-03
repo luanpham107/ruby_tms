@@ -1,5 +1,5 @@
 module SubjectsHelper
   def new_action?
-    current_page?(action: :new)
+    action_name == "new"
   end
 end

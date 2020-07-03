@@ -1,5 +1,5 @@
 <li>
-  <p><%= link_to course.name, course %></p>
+  <p><%= link_to course.name, [:admin,course] %></p>
   <p><%= course.description %></p>
   <p><span><%= t("course.show.status") %></span><%= course.status.humanize %></p>
 </li>

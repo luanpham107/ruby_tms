@@ -1,4 +1,4 @@
-class CourseDetailsController < ApplicationController
+class Admin::CourseDetailsController < ApplicationController
   before_action :logged_in_user
   before_action :is_trainer?, :load_course, only: :create
 
@@ -11,7 +11,7 @@ class CourseDetailsController < ApplicationController
 
       @added_subjects = @course.subjects.newest
     rescue
-      flash.now[:warning] = t "courses.add_existing_subject.warning"
+      flash.now[:warning] = t "admin.courses.add_existing_subject.warning"
       redirect_to root_path
     end
   end
@@ -22,7 +22,7 @@ class CourseDetailsController < ApplicationController
     @course = Course.find_by id: params[:course_id]
     return if @course
 
-    flash[:warning] = t "courses.load_course.not_found"
+    flash[:warning] = t "admin.courses.load_course.not_found"
     redirect_to root_path
   end
 end

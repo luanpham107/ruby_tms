@@ -1,4 +1,4 @@
-<%= form_for([@task.subject, @task]) do |f| %>
+<%= form_for([:admin, @task.subject, @task]) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.label :name, t(".name") %>
   <%= f.text_field :name, class: "form-control" %>

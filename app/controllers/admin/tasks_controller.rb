@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class Admin::TasksController < ApplicationController
   before_action :logged_in_user
   before_action :is_trainer?
   before_action :load_subject, :load_task, only: %i(show edit update)
@@ -10,7 +10,7 @@ class TasksController < ApplicationController
   def update
     if @task.update task_params
       flash[:success] = t ".success"
-      redirect_to @subject
+      redirect_to [:admin, @subject]
     else
       render :edit
     end
