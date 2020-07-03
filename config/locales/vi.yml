@@ -1,2 +1,46 @@
 vi:
-
+  application:
+    _helper:
+      base_title: "Hệ thống quản lý đào tạo"
+  shared:
+    header:
+      app_name: "Hệ thống quản lý"
+      home: "Trang chủ"
+      account: "Tài khoản"
+      profile: "Hồ sơ cá nhân"
+      setting: "Thiết lập"
+      log_out: "Đăng xuất"
+      log_in: "Đăng nhập"
+  static_pages:
+    home:
+      title: "Trang chính"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      email: "E-mail"
+      password: "Mật khẩu"
+      remember: "Ghi nhớ"
+      log_in: "Đăng nhập"
+    create:
+      invalid : "E-mail/Mật khẩu không chính xác"
+  activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        email: "E-mail"
+        password: "Mật khẩu"
+        password_confirmation: "Xác thực mật khẩu"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              too_long: "quá dài (tối đa là %{count} kí tự)"
+            password:
+              too_short: "quá ngắn (tối thiểu is %{count} kí tự)"
+  errors:
+    messages:
+      blank: "không thể bị để trống"
+      invalid: "không hợp lệ"
+      taken: "đã tồn tại"
+      confirmation: "không khớp với mật khẩu"

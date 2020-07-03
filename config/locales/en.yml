@@ -1,2 +1,46 @@
 en:
-
+  application:
+    _helper:
+      base_title: "Training Management System"
+  shared:
+    header:
+      app_name: "Management System"
+      home: "Home"
+      account: "Account"
+      profile: "Profile"
+      setting: "Setting"
+      log_out: "Log out"
+      log_in: "Log in"
+  static_pages:
+    home:
+      title: "Home"
+  sessions:
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      remember: "Remmber"
+      log_in: "Log in"
+    create:
+      invalid : "Invalid Email/Password"
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              too_long: "is too long (maximum is %{count} characters)"
+            password:
+              too_short: "is too short (minimum is %{count} characters)"
+  errors:
+    messages:
+      blank: "can't be blank"
+      invalid: "is invalid"
+      taken: "has already been taken"
+      confirmation: "doesn't match password"
