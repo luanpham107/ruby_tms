@@ -160,6 +160,8 @@ vi:
       table_status: "Trạng thái"
     load_course:
       not_found: "Khóa học không tồn tại"
+    create_subject_form:
+      start: "Bắt đầu"
   subjects:
     show:
       title: "Xem môn học"
@@ -179,6 +181,15 @@ vi:
       description: "Mô tả tác vụ : %{description}"
     load_task:
       not_found: "Tác vụ không tồn tại"
+  user_subjects:
+    create:
+      close_course: "Khóa học này đã bị đóng bởi người đào tạo"
+      finished_subject: "Môn học này đã kết thúc bởi người đào tạo"
+      start_success: "Bắt đầu khóa học thành công"
+      start_failed: "Bắt đầu khóa học thất bại"
+      failed: "Bắt đầu khóa học thất bại"
+    load_subject_within_course:
+      not_found: "Môn học này không tồn tại trong khóa học hiện tại"
   activerecord:
     attributes:
       user:
@@ -205,6 +216,16 @@ vi:
       task:
         name: "Tên tác vụ:"
         description: "Mô tả tác vụ"
+      user_subject:
+        statuses:
+          pending: "Chưa bắt đầu"
+          open: "Đang mở"
+          finished: "Đã hoàn thành"
+      process_task:
+        statuses:
+          pending: "Chưa bắt đầu"
+          in_processing: "Đang trong quá trình"
+          finished: "Đã hoàn thành"
     errors:
       models:
         user:

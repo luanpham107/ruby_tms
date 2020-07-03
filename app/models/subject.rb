@@ -2,6 +2,7 @@ class Subject < ApplicationRecord
   # Author of Subject
   has_many :course_details, dependent: :destroy
   has_many :courses, through: :course_details
+  has_many :user_subjects, dependent: :destroy
   has_many :users, through: :user_subjects
 
   # Relation between Task and User

@@ -1,0 +1,5 @@
+<%= form_for subject.user_subjects.build do |f| %>
+  <%= f.hidden_field :subject_id, value: subject.id %>
+  <%= f.hidden_field :course_id, value: course.id %>
+  <%= f.submit t(".start"), class: "btn btn-primary" %>
+<% end %>

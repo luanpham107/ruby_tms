@@ -1,3 +1,10 @@
 <li>
   <%= link_to task.name, [@course, @subject, task] %> | <%= task.description %>
+  <div class="row">
+    <div class="col-md-4">
+      <% if check_exist_in_process_task task %>
+        <%= select_tag(:process_task, options_for_select(statuses_generator_status, get_status_process_task(task)), class: "form-control") %>
+      <% end %>
+    </div>
+  </div>
 </li>

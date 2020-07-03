@@ -160,6 +160,8 @@ en:
       table_status: "Status"
     load_course:
       not_found: "Course is not existing"
+    create_subject_form:
+      start: "Start"
   subjects:
     show:
       title: "Show subject"
@@ -179,6 +181,15 @@ en:
       description: "Task description : %{description}"
     load_task:
       not_found: "Task is not existing"
+  user_subjects:
+    create:
+      close_course: "This course have closed by trainer"
+      finished_subject: "This subject have finished by trainer"
+      start_success: "Starting subject success"
+      start_failed: "Starting subject failed"
+      failed: "Starting subject failed"
+    load_subject_within_course:
+      not_found: "This subject is not existing within course"
   activerecord:
     attributes:
       user:
@@ -205,6 +216,16 @@ en:
       task:
         name: "Task name:"
         description: "Task description"
+      user_subject:
+        statuses:
+          pending: "Pending"
+          open: "Open"
+          finished: "Finished"
+      process_task:
+        statuses:
+          pending: "Pending"
+          in_processing: "In Processing"
+          finished: "Finished"
     errors:
       models:
         user:
