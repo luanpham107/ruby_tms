@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_071433) do
+ActiveRecord::Schema.define(version: 2020_07_13_094626) do
 
   create_table "course_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "status", default: 0
@@ -64,10 +64,8 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
     t.string "name"
     t.integer "duration"
     t.string "description"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -89,6 +87,16 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 
+  create_table "user_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
+    t.index ["user_id"], name: "index_user_subjects_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -105,8 +113,9 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
   add_foreign_key "process_tasks", "tasks"
   add_foreign_key "process_tasks", "users"
   add_foreign_key "reports", "users"
-  add_foreign_key "subjects", "users"
   add_foreign_key "tasks", "subjects"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
+  add_foreign_key "user_subjects", "subjects"
+  add_foreign_key "user_subjects", "users"
 end
