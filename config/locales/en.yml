@@ -2,6 +2,10 @@ en:
   application:
     _helper:
       base_title: "Training Management System"
+    logged_in_user:
+      must_be_login: "You must be login"
+    is_trainer :
+      not_permit: "Sorry, you don't have permission"
   shared:
     header:
       app_name: "Management System"
@@ -11,6 +15,7 @@ en:
       setting: "Setting"
       log_out: "Log out"
       log_in: "Log in"
+      subject: "Subject"
   static_pages:
     home:
       title: "Home"
@@ -23,6 +28,12 @@ en:
       log_in: "Log in"
     create:
       invalid : "Invalid Email/Password"
+  subjects:
+    new:
+      title: "Subject"
+      create_new_subject: "Create new subject"
+    create:
+      success_message: "Create a new subject success"
   activerecord:
     attributes:
       user:
@@ -30,6 +41,10 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+      subject:
+        name: "Name"
+        description: "Description"
+        duration: "Duration"
     errors:
       models:
         user:
@@ -44,3 +59,5 @@ en:
       invalid: "is invalid"
       taken: "has already been taken"
       confirmation: "doesn't match password"
+      not_a_number: "must be a number"
+      greater_than_or_equal_to: "must be greater than or equal to %{count} "

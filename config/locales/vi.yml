@@ -2,6 +2,10 @@ vi:
   application:
     _helper:
       base_title: "Hệ thống quản lý đào tạo"
+    logged_in_user:
+      must_be_login: "Bạn phải đăng nhập"
+    is_trainer :
+      not_permit: "Xin lỗi, bạn không có quyền"
   shared:
     header:
       app_name: "Hệ thống quản lý"
@@ -11,6 +15,7 @@ vi:
       setting: "Thiết lập"
       log_out: "Đăng xuất"
       log_in: "Đăng nhập"
+      subject: "Môn học"
   static_pages:
     home:
       title: "Trang chính"
@@ -23,6 +28,12 @@ vi:
       log_in: "Đăng nhập"
     create:
       invalid : "E-mail/Mật khẩu không chính xác"
+  subjects:
+    new:
+      title: "Môn học"
+      create_new_subject: "Tạo môn học mới"
+    create:
+      success_message: "Tạo một môn học mới thành công"
   activerecord:
     attributes:
       user:
@@ -30,6 +41,10 @@ vi:
         email: "E-mail"
         password: "Mật khẩu"
         password_confirmation: "Xác thực mật khẩu"
+      subject:
+        name: "Tên"
+        description: "Mô tả"
+        duration: "Thời hạn"
     errors:
       models:
         user:
@@ -44,3 +59,5 @@ vi:
       invalid: "không hợp lệ"
       taken: "đã tồn tại"
       confirmation: "không khớp với mật khẩu"
+      not_a_number: "phải là một số"
+      greater_than_or_equal_to: "phải lớn hơn hoặc bằng %{count}"
