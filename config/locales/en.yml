@@ -43,6 +43,40 @@ en:
       create_new_subject: "Create new subject"
     create:
       success_message: "Create a new subject success"
+  courses:
+    new:
+      title: "Let make a new course"
+      submit_btn: "Create new course"
+    create:
+      success_message: "Your course was created succsessfully."
+      fail_message: "Can not save course to user."
+    visit:
+      title: "Here is list of your course"
+    show:
+      not_found: "This course is not exist."
+      title: "Course"
+      status: "Status: "
+      add_member: "Add member"
+      add_existing_user: "Add existing user into course: "
+      fill_in_name: "Fill in name you want to search"
+      choose_message: "Please choose user before clicking Add member button"
+      previous: "Previous"
+      next: "Next"
+    edit:
+      title: "Edit this course"
+      submit_btn: "Update this course"
+      success_message: "Your course was edited and saved succsessfully."
+    show_member:
+      number_member: "Member: (%{number})"
+    search_result:
+      add: "Add member"
+    load_course:
+      not_found: "Course is not existing"
+    add_existing_user:
+      warning: " Error! Adding member failed"
+      success: "Adding member success"
+    load_existing_users:
+      not_found: "user is not existing"
   activerecord:
     attributes:
       user:
@@ -77,21 +111,3 @@ en:
       confirmation: "doesn't match password"
       not_a_number: "must be a number"
       greater_than_or_equal_to: "must be greater than or equal to %{count} "
-
-  course:
-    new:
-      title: "Let make a new course"
-      submit_btn: "Create new course"
-    create:
-      success_message: "Your course was created succsessfully."
-      fail_message: "Can not save course to user."
-    visit:
-      title: "Here is list of your course"
-    show:
-      not_found: "This course is not exist."
-      title: "Course"
-      status: "Status: "
-    edit:
-      title: "Edit this course"
-      submit_btn: "Update this course"
-      success_message: "Your course was edited and saved succsessfully."

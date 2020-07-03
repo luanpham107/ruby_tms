@@ -1,0 +1,6 @@
+<% if @users %>
+  <h3><%= t(".number_member", number: @course.users.count) %></h3>
+  <ol>
+    <%= render @users %>
+  </ol>
+<% end %>

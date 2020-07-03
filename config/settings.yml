@@ -2,6 +2,9 @@ subject_form:
   duration:
     min: 1
 course:
+  show:
+    paginate:
+      member: 5
   name:
     max_length: 255
   description:

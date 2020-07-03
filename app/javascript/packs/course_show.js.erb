@@ -1,0 +1,45 @@
+$(document).ready(function(){
+  $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+
+  $('#name').change(function(e){
+    var name = $(this).val();
+    var course_id = $('#course_id').val()
+    $.ajax({
+      method: 'GET',
+      url: '/search_user_by_name',
+      dataType: 'script',
+      data: {
+        name: name,
+        course_id: course_id
+      },
+    });
+  })
+
+  $(document).on('click','#add_member', function(){
+    var val = [];
+    var course_id = $('#course_id').val()
+
+    $(':checkbox:checked').each(function(i){
+      val[i] = parseInt($(this).val());
+    });
+
+    if(val.length > 0) {
+      $.ajax({
+        method: 'POST',
+        url: '/add_existing_user_to_course',
+        dataType: 'script',
+        data: {
+          user_ids: JSON.stringify(val),
+          course_id: course_id
+        },
+      });
+    }
+    else {
+      alert(I18n.t("courses.show.choose_message"))
+    }
+  })
+})

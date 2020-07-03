@@ -1,0 +1,18 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <div class="col-md-5">
+    <h3><%= t ".add_existing_user" %></h3>
+      <%= label_tag :name, t(".fill_in_name") %>
+      <%= text_field_tag :name, nil, class: "form-control" %>
+      <%= hidden_field_tag :course_id, @course.id %>
+    <div id="result_search">
+      <%= render "search_result" %>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div id="show_member">
+      <%= render "show_member" %>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "courses_users", "data-turbolinks-track": "reload" %>
