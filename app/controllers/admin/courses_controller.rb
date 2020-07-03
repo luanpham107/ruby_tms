@@ -35,7 +35,7 @@ class Admin::CoursesController < ApplicationController
   def update
     if @course.update course_edit_params
       flash[:success] = t "admin.courses.edit.success_message"
-      redirect_to [:admin,  @course]
+      redirect_to [:admin, @course]
     else
       render :edit
     end

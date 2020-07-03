@@ -102,14 +102,13 @@ vi:
         choose_message: "Vui lòng chọn trước khi bấm nút thêm thành viên"
         previous: "Trước"
         next: "Sau"
+        add: "Thêm thành viên mới"
       edit:
         title: "Chỉnh sửa khóa học"
         submit_btn: "Cập nhập khóa học"
         success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"
       show_member:
         number_member: "Thành viên: (%{number})"
-      search_result:
-        add: "Thêm thành mới"
       load_course:
         not_found: "Khóa học này không tồn tại"
       add_existing_user:
