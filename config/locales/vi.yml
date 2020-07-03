@@ -128,6 +128,49 @@ vi:
         table_description: "Mô tả"
       load_existing_subjects:
         not_found: "Lỗi! Không tồn tại khóa học trên CSDL"
+  courses:
+    show:
+      not_found: "Khóa học này không tồn tại."
+      title: "Khóa học"
+      status: "Trạng thái: "
+      add_member: "Thêm thành viên"
+      add_existing_user: "Thêm người dùng đã tồn tại vào khóa học :"
+      fill_in_name: "Điền tên mà bạn muốn tìm "
+      choose_message: "Vui lòng chọn trước khi bấm nút thêm thành viên"
+      previous: "Trước"
+      next: "Sau"
+      add: "Thêm thành viên mới"
+      number_member: "Thành viên: (%{number})"
+    add_existing_subject:
+      search_hint: "Gõ tên môn học sau đó nhấn Enter!"
+      h3_text: "Môn học"
+      add_subject_btn: "Thêm môn"
+      close_btn: "Đóng"
+      warning: "Lỗi! Không thể thêm môn học."
+      success: "Thêm môn học thành công"
+      table_no: "No."
+      table_name: "Tên"
+      table_description: "Mô tả"
+      table_status: "Trạng thái"
+  subjects:
+    show:
+      title: "Xem môn học"
+      name: "Tên môn học : %{name}"
+      description: "Mô tả môn học : %{description}"
+      duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
+      edit_subject: "Chỉnh sửa môn học"
+      previous: "Trang trước"
+      next: "Trang sau"
+      number_task: "Tác vụ: (%{number})"
+    load_subject:
+      not_found: "Môn học không tồn tại"
+  tasks:
+    show:
+      title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
+      name: "Tên tác vụ: %{name}"
+      description: "Mô tả tác vụ : %{description}"
+    load_task:
+      not_found: "Tác vụ không tồn tại"
   activerecord:
     attributes:
       user:
