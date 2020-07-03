@@ -1,0 +1,28 @@
+$(document).ready(function(){
+  $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+
+  $('.btn_update').click(function(){
+    var div = $(this).closest('div');
+    var status = div.find('select').val();
+    var task_id = div.find('#task_id').val()
+    var course_id = $('#course_id').val();
+    var subject_id = $('#subject_id').val();
+
+    $.ajax({
+      method: 'POST',
+      url: "/update_process_task",
+      dataType: 'script',
+      data: {
+        status: status,
+        task_id: task_id,
+        course_id: course_id,
+        subject_id: subject_id
+      },
+    });
+
+  })
+})

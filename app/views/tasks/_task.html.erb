@@ -4,6 +4,9 @@
     <div class="col-md-4">
       <% if check_exist_in_process_task task %>
         <%= select_tag(:process_task, options_for_select(statuses_generator_status, get_status_process_task(task)), class: "form-control") %>
+        <%= hidden_field_tag :task_id, task.id %>
+        <br>
+        <button class="btn btn-danger btn_update"><%= t ".update_task" %></button>
       <% end %>
     </div>
   </div>
