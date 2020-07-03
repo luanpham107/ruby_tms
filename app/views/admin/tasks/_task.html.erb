@@ -2,4 +2,5 @@
   <%= task.name %> | <%= task.description %>
   <%= link_to t(".view_detail"), [:admin, task.subject, task], class: "btn btn-primary" %>
   <%= link_to t(".edit_task"), edit_admin_subject_task_path(task.subject, task), class: "btn btn-warning" %>
+  <hr>
 </li>

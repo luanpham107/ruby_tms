@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post "/add_subject_by_name", to: "course_details#create"
       post "/update_subject_status", to: "course_details#update"
 
-      resources :subjects, except: %i(index destroy) do
+      resources :subjects, except: :destroy do
           resources :tasks, only: %i(show edit update)
       end
       resources :courses do
