@@ -172,6 +172,8 @@ vi:
       not_found: "Khóa học không tồn tại"
     create_subject_form:
       start: "Bắt đầu"
+    show_subject:
+      btn_update: "Cập nhật"
   subjects:
     show:
       title: "Xem môn học"
@@ -185,6 +187,8 @@ vi:
       status: "Trạng thái của môn học: %{status}"
     load_subject:
       not_found: "Môn học không tồn tại"
+    load_user_subject:
+      not_found: "Không tìm thấy trong cơ sở dữ liệu"
   tasks:
     show:
       title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
@@ -201,11 +205,15 @@ vi:
       start_success: "Bắt đầu khóa học thành công"
       start_failed: "Bắt đầu khóa học thất bại"
       failed: "Bắt đầu khóa học thất bại"
+    update:
+      success: "Cập nhật môn học thành công"
+      failed : "Cập nhật môn học thất bại"
     load_subject_within_course:
       not_found: "Môn học này không tồn tại trong khóa học hiện tại"
   process_tasks:
     update:
       success: "Cập nhật tác vụ thành công"
+      failed: "Cập nhật tác vụ thất bại"
     load_subject_within_course:
       not_found: "Môn học này không tồn tại trong khóa học hiện tại"
     load_process_task:
