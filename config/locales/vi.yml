@@ -56,14 +56,17 @@ vi:
       success: "Cập nhật môn học thành công"
     load_subject:
       not_found: "Môn học không tồn tại"
+    subject_form:
+      add_task: "Thêm tác vụ"
+    task_fields:
+      remove_task: "Xóa task"
   courses:
     new:
       title: "Tạo khóa học mới"
       submit_btn: "Nhấn nút để khởi tạo"
     create:
       success_message: "Khởi tạo khóa học thành công."
-      user_course:
-        fail_message: "Không thể lưu khóa học này"
+      fail_message: "Không thể lưu khóa học này"
     visit:
       title: "Tất cả khóa học"
     show:
@@ -109,6 +112,9 @@ vi:
           pending: "Chưa bắt đầu"
           open: "Đang diễn ra"
           closed: "Đóng"
+      task:
+        name: "Tên tác vụ:"
+        description: "Mô tả tác vụ"
     errors:
       models:
         user:

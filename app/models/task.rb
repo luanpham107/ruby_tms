@@ -3,4 +3,7 @@ class Task < ApplicationRecord
 
   has_many :process_tasks, dependent: :destroy
   has_many :users, through: :process_tasks
+
+  validates :name, presence: true
+  validates :description, presence: true
 end
