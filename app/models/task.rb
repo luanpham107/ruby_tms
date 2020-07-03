@@ -6,4 +6,6 @@ class Task < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
+
+  scope :sort_by_name, ->{order :name}
 end

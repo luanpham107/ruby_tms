@@ -7,6 +7,10 @@
     <p><%= t ".duration", duration: @subject.duration %></p>
   </div>
   <div class="col-md-6">
-    <%= link_to t ".edit_subject", edit_subject_path(@subject), class: "btn btn-warning", role: "button" %>
+    <%= link_to t(".edit_subject"), edit_subject_path(@subject), class: "btn btn-warning", role: "button" %>
   </div>
+</div>
+<div id="show_task">
+  <%= render "show_task" %>
+  <%= will_paginate @tasks, previous_label: t("subjects.show.previous"), next_label: t("subjects.show.next") %>
 </div>

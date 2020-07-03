@@ -9,3 +9,7 @@ course:
     max_length: 255
   description:
     max_length: 255
+subject:
+  show:
+    paginate:
+      task: 5

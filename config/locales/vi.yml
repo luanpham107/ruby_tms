@@ -48,7 +48,9 @@ vi:
       name: "Tên môn học : %{name}"
       description: "Mô tả môn học : %{description}"
       duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
-      edit_subject: "Chỉnh siawr môn học"
+      edit_subject: "Chỉnh sửa môn học"
+      previous: "Trang trước"
+      next: "Trang sau"
     edit:
       title : "Chỉnh sửa subject"
       update_subject: "Cập nhật môn học"
@@ -59,7 +61,9 @@ vi:
     subject_form:
       add_task: "Thêm tác vụ"
     task_fields:
-      remove_task: "Xóa task"
+      remove_task: "Xóa tác vụ"
+    show_task:
+      number_task: "Tác vụ: (%{number})"
   courses:
     new:
       title: "Tạo khóa học mới"

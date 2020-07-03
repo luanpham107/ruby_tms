@@ -9,7 +9,10 @@ class SubjectsController < ApplicationController
     @subject.tasks.new
   end
 
-  def show; end
+  def show
+    @tasks = @subject.tasks.sort_by_name.paginate(page: params[:page],
+      per_page: Settings.subject.show.paginate.task)
+  end
 
   def create
     if @subject.save
@@ -46,7 +49,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find_by id: params[:id]
     return if @subject
 
-    flash[:warning] = t ".not_found"
+    flash[:warning] = t "subjects.load_subject.not_found"
     redirect_to root_path
   end
 end

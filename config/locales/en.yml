@@ -49,6 +49,8 @@ en:
       description: "Subject name : %{description}"
       duration: "Subject duration (maximum, unit: day) : %{duration}"
       edit_subject: "Edit subject"
+      previous: "Previous page"
+      next: "Next page"
     edit:
       title : "Edit subject"
       update_subject: "Update subject"
@@ -60,6 +62,8 @@ en:
       add_task: "Add task"
     task_fields:
       remove_task: "Remove task"
+    show_task:
+      number_task: "Task: (%{number})"
   courses:
     new:
       title: "Let make a new course"
