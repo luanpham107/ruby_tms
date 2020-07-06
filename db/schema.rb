@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_06_071433) do
 
   create_table "course_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "course_id", null: false
     t.bigint "subject_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "percent"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "process_task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
   create_table "process_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "description"
     t.integer "percent"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -64,9 +64,10 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
     t.string "name"
     t.integer "duration"
     t.string "description"
-    t.integer "status"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -79,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
   end
 
   create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "role"
+    t.integer "role", default: 0
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -92,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.integer "role"
+    t.integer "role", default: 0
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -104,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_071433) do
   add_foreign_key "process_tasks", "tasks"
   add_foreign_key "process_tasks", "users"
   add_foreign_key "reports", "users"
+  add_foreign_key "subjects", "users"
   add_foreign_key "tasks", "subjects"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
