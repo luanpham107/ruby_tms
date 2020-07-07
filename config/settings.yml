@@ -1,3 +1,8 @@
 subject_form:
   duration:
     min: 1
+course:
+  name:
+    max_length: 255
+  description:
+    max_length: 255
