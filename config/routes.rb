@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     get "/log-in", to: "sessions#new"
     post "/log-in", to: "sessions#create"
     delete "/log-out", to: "sessions#destroy"
+
+    resources :subjects, only: %i(new create)
   end
 end

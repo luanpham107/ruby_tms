@@ -16,4 +16,19 @@ class ApplicationController < ActionController::Base
     parsed_locale = params[:locale]
     I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
   end
+
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t "application.logged_in_user.must_be_login"
+    redirect_to log_in_url
+  end
+
+  def is_trainer?
+    return if current_user.trainer?
+
+    flash[:danger] = t "application.is_trainer.not_permit"
+    redirect_to root_path
+  end
 end
