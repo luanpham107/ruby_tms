@@ -3,7 +3,7 @@ class CreateProcessTasks < ActiveRecord::Migration[6.0]
     create_table :process_tasks do |t|
       t.string :description
       t.integer :percent
-      t.integer :status
+      t.integer :status, default: 0
       t.references :user, null: false, foreign_key: true
       t.references :task, null: false, foreign_key: true
 
