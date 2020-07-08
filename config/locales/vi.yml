@@ -16,6 +16,10 @@ vi:
       log_out: "Đăng xuất"
       log_in: "Đăng nhập"
       subject: "Môn học"
+      course:
+        link: "Khóa học"
+        visit: "Xem khóa học của bạn"
+        new: "Tạo khóa học mới"
   static_pages:
     home:
       title: "Trang chính"
@@ -61,3 +65,10 @@ vi:
       confirmation: "không khớp với mật khẩu"
       not_a_number: "phải là một số"
       greater_than_or_equal_to: "phải lớn hơn hoặc bằng %{count}"
+
+  course:
+    new:
+      title: "Tạo khóa học mới"
+      submit_btn: "Nhấn nút để khởi tạo"
+    create:
+      success_message: "Khởi tạo khóa học thành công."

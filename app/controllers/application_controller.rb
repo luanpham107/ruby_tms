@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  include CoursesHelper
   before_action :set_locale
 
   def default_url_options

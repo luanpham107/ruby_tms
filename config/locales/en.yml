@@ -16,6 +16,10 @@ en:
       log_out: "Log out"
       log_in: "Log in"
       subject: "Subject"
+      course:
+        link: "Course"
+        visit: "Visit your course"
+        new: "Make a new course"
   static_pages:
     home:
       title: "Home"
@@ -61,3 +65,10 @@ en:
       confirmation: "doesn't match password"
       not_a_number: "must be a number"
       greater_than_or_equal_to: "must be greater than or equal to %{count} "
+
+  course:
+    new:
+      title: "Make a new course"
+      submit_btn: "Create new course"
+    create:
+      success_message: "Your course was created succsessfully."

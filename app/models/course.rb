@@ -7,4 +7,8 @@ class Course < ApplicationRecord
   # Relation between Course and Subject
   has_many :course_details, dependent: :destroy
   has_many :subjects, through: :course_details
+
+  # Validate
+  validates :name, presence: true, length: {maximum: Settings.course.name.max_length}
+  validates :description, length: {maximum: Settings.course.name.max_length}
 end

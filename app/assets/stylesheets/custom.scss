@@ -17,6 +17,12 @@ textarea {
   margin-bottom: 10px;
 }
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /*header*/
 #logo {
   float: left;
@@ -39,6 +45,20 @@ textarea {
   color: red;
   margin: 0 0 30px 0;
   }
+}
+
+/* forms */
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+input {
+  height: auto !important;
 }
 
 .field_with_errors {
