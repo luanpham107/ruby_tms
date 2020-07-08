@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     delete "/log-out", to: "sessions#destroy"
 
     resources :subjects, only: %i(new create)
-    resources :courses, only: %i(new create)
+    resources :courses, except: %i(delete destroy)
   end
 end

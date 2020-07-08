@@ -11,4 +11,5 @@ class Course < ApplicationRecord
   # Validate
   validates :name, presence: true, length: {maximum: Settings.course.name.max_length}
   validates :description, length: {maximum: Settings.course.name.max_length}
+  scope :newest, ->{order created_at: :desc}
 end
