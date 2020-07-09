@@ -3,14 +3,16 @@
 #
 # Examples:
 #
-User.create!(name: "admin", email: "admin@gmail.com",
-  password: "12345678", role: 1, description: "Administrator - Trainer")
+# User.create!(name: "admin", email: "admin@gmail.com",
+#   password: "12345678", role: 1, description: "Administrator - Trainer")
 
-10.times do |n|
-  name = Faker::Name.name
-  email = "user#{n+1}@gmail.com"
-  password = "12345678"
-  User.create!(name: name, email: email, password: password,
-  description: "Trainee")
-end
+# 10.times do |n|
+#   name = Faker::Name.name
+#   email = "user#{n+1}@gmail.com"
+#   password = "12345678"
+#   User.create!(name: name, email: email, password: password,
+#   description: "Trainee")
+# end
 
+User.create!(name: "admin2", email: "admin2@gmail.com",
+  password: "12345678", role: 1, description: "Administrator2 - Trainer")

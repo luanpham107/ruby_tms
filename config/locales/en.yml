@@ -6,6 +6,8 @@ en:
       must_be_login: "You must be login"
     is_trainer :
       not_permit: "Sorry, you don't have permission"
+    is_owner:
+      not_permit: "Sorry, you must be the owner to edit."
   shared:
     header:
       app_name: "Management System"
@@ -20,6 +22,9 @@ en:
         link: "Course"
         visit: "Visit your course"
         new: "Make a new course"
+    action:
+      edit: "Edit"
+      delete: "Delete"
   static_pages:
     home:
       title: "Home"
@@ -49,6 +54,13 @@ en:
         name: "Name"
         description: "Description"
         duration: "Duration"
+      course:
+        name: "Course name"
+        description: "Description"
+        statuses:
+          pending: "Pending"
+          open: "Open"
+          closed: "Closed"
     errors:
       models:
         user:
@@ -68,7 +80,18 @@ en:
 
   course:
     new:
-      title: "Make a new course"
+      title: "Let make a new course"
       submit_btn: "Create new course"
     create:
       success_message: "Your course was created succsessfully."
+      fail_message: "Can not save course to user."
+    visit:
+      title: "Here is list of your course"
+    show:
+      not_found: "This course is not exist."
+      title: "Course"
+      status: "Status: "
+    edit:
+      title: "Edit this course"
+      submit_btn: "Update this course"
+      success_message: "Your course was edited and saved succsessfully."

@@ -1,0 +1,7 @@
+<%= provide :title, t("course.show.title") %>
+<h3><%= @course.name %></h3>
+<%= link_to t("shared.action.edit"), edit_course_path(user_action: "edit_course") %>
+<div class="col-md-6">
+  <p><%= @course.description %></p>
+  <p><%= @course.status.humanize %></p>
+</div>

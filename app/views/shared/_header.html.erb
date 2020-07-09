@@ -14,7 +14,7 @@
               <% if current_user.trainer? %>
                 <li><%= link_to t("shared.header.course.new"), new_course_path %></li>
               <% end %>
-              <li><%= link_to t("shared.header.course.visit"),  "#"  %></li>
+              <li><%= link_to t("shared.header.course.visit"), courses_path %></li>
             </ul>
           </li>
           <li class="dropdown">

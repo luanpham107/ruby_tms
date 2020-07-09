@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
-  before_action :is_trainer?, only: %i(new create)
+  before_action :logged_in_user
+  before_action :load_course, only: %i(show edit update)
+  before_action :is_owner?, only: %i(edit update)
   before_action :build_course, only: :create
 
   def new
@@ -8,9 +9,29 @@ class CoursesController < ApplicationController
   end
 
   def create
-    if @course.save
-      flash[:success] = t "course.create.success_message"
-      redirect_to root_path
+    @course.transaction do
+      @course.save!
+      UserCourse.create! user: current_user, course: @course
+    end
+    flash[:success] = t "course.create.success_message"
+    redirect_to courses_path
+  rescue
+    flash.now[:danger] = t "course.create.fail_message"
+    render :new
+  end
+
+  def index
+    @courses = current_user.courses.newest.paginate(page: params[:page])
+  end
+
+  def show; end
+
+  def edit; end
+
+  def update
+    if @course.update course_edit_params
+      flash[:success] = t "course.edit.success_message"
+      redirect_to course_path
     else
       render :new
     end
@@ -18,11 +39,30 @@ class CoursesController < ApplicationController
 
   private
 
-  def course_params
+  def course_create_params
     params.require(:course).permit(:name, :description)
   end
 
+  def course_edit_params
+    params.require(:course).permit(:name, :description, :status)
+  end
+
   def build_course
-    @course = current_user.courses.build course_params
+    @course = current_user.courses.build course_create_params
+  end
+
+  def load_course
+    @course = Course.find_by id: params[:id]
+    return if @course
+
+    flash[:danger] = t "course.show.not_found"
+    redirect_to root_path
+  end
+
+  def is_owner?
+    return if current_user.user_courses.find_by(course_id: @course.id)&.owner?
+
+    flash[:danger] = t "application.is_owner.not_permit"
+    redirect_to course_path
   end
 end

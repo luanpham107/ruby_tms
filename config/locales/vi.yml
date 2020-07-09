@@ -6,6 +6,8 @@ vi:
       must_be_login: "Bạn phải đăng nhập"
     is_trainer :
       not_permit: "Xin lỗi, bạn không có quyền"
+    is_owner:
+      not_permit: "Xin lỗi, chỉ có owner mới chỉnh sửa được khóa học."
   shared:
     header:
       app_name: "Hệ thống quản lý"
@@ -20,6 +22,9 @@ vi:
         link: "Khóa học"
         visit: "Xem khóa học của bạn"
         new: "Tạo khóa học mới"
+    action:
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
   static_pages:
     home:
       title: "Trang chính"
@@ -49,6 +54,13 @@ vi:
         name: "Tên"
         description: "Mô tả"
         duration: "Thời hạn"
+      course:
+        name: "Tên khóa học"
+        description: "Mô tả"
+        statuses:
+          pending: "Chưa bắt đầu"
+          open: "Đang diễn ra"
+          closed: "Đóng"
     errors:
       models:
         user:
@@ -72,3 +84,15 @@ vi:
       submit_btn: "Nhấn nút để khởi tạo"
     create:
       success_message: "Khởi tạo khóa học thành công."
+      user_course:
+        fail_message: "Không thể lưu khóa học này"
+    visit:
+      title: "Tất cả khóa học"
+    show:
+      not_found: "Khóa học này không tồn tại."
+      title: "Khóa học"
+      status: "Trạng thái: "
+    edit:
+      title: "Chỉnh sửa khóa học"
+      submit_btn: "Cập nhập khóa học"
+      success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"
