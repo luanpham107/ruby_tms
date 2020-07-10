@@ -43,6 +43,41 @@ vi:
       create_new_subject: "Tạo môn học mới"
     create:
       success_message: "Tạo một môn học mới thành công"
+  courses:
+    new:
+      title: "Tạo khóa học mới"
+      submit_btn: "Nhấn nút để khởi tạo"
+    create:
+      success_message: "Khởi tạo khóa học thành công."
+      user_course:
+        fail_message: "Không thể lưu khóa học này"
+    visit:
+      title: "Tất cả khóa học"
+    show:
+      not_found: "Khóa học này không tồn tại."
+      title: "Khóa học"
+      status: "Trạng thái: "
+      add_member: "Thêm thành viên"
+      add_existing_user: "Thêm người dùng đã tồn tại vào khóa học :"
+      fill_in_name: "Điền tên mà bạn muốn tìm "
+      choose_message: "Vui lòng chọn trước khi bấm nút thêm thành viên"
+      previous: "Trước"
+      next: "Sau"
+    edit:
+      title: "Chỉnh sửa khóa học"
+      submit_btn: "Cập nhập khóa học"
+      success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"
+    show_member:
+      number_member: "Thành viên: (%{number})"
+    search_result:
+      add: "Thêm thành mới"
+    load_course:
+      not_found: "Khóa học này không tồn tại"
+    add_existing_user:
+      warning: " Lỗi! Thêm thành viên thất bại"
+      success: " Thêm thành viên thành công "
+    load_existing_users:
+      not_found: "Người dùng không tồn tại"
   activerecord:
     attributes:
       user:
@@ -77,22 +112,3 @@ vi:
       confirmation: "không khớp với mật khẩu"
       not_a_number: "phải là một số"
       greater_than_or_equal_to: "phải lớn hơn hoặc bằng %{count}"
-
-  course:
-    new:
-      title: "Tạo khóa học mới"
-      submit_btn: "Nhấn nút để khởi tạo"
-    create:
-      success_message: "Khởi tạo khóa học thành công."
-      user_course:
-        fail_message: "Không thể lưu khóa học này"
-    visit:
-      title: "Tất cả khóa học"
-    show:
-      not_found: "Khóa học này không tồn tại."
-      title: "Khóa học"
-      status: "Trạng thái: "
-    edit:
-      title: "Chỉnh sửa khóa học"
-      submit_btn: "Cập nhập khóa học"
-      success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"

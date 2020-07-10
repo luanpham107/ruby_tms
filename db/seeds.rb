@@ -1,18 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-# User.create!(name: "admin", email: "admin@gmail.com",
-#   password: "12345678", role: 1, description: "Administrator - Trainer")
+User.create!(name: "admin", email: "admin@gmail.com",
+  password: "12345678", role: 1, description: "Administrator - Trainer")
 
-# 10.times do |n|
-#   name = Faker::Name.name
-#   email = "user#{n+1}@gmail.com"
-#   password = "12345678"
-#   User.create!(name: name, email: email, password: password,
-#   description: "Trainee")
-# end
+10.times do |n|
+  name = Faker::Name.name
+  email = "user#{n+1}@gmail.com"
+  password = "12345678"
+  User.create!(name: name, email: email, password: password,
+  description: "Trainee")
+end
 
-User.create!(name: "admin2", email: "admin2@gmail.com",
-  password: "12345678", role: 1, description: "Administrator2 - Trainer")
+10.times do |n|
+  name = Faker::Name.name
+  description = "This is course description of course #{n}"
+  Course.create!(name: name, description: description, status: 0)
+end
+
+10.times do |n|
+  UserCourse.create!(user_id: n+1 , course_id: 1, role: 2)
+end
+

@@ -15,4 +15,9 @@ class User < ApplicationRecord
   # Relation between User and Subject
   has_many :subjects, dependent: :destroy
   has_secure_password
+
+  # scope:
+  scope :search_by_name_role, ->{order("name ASC, role")}
+  scope :search, ->(name, not_in){where "name like ? and id not in (?) ", "%#{name}%", not_in}
+  scope :search_by_ids, ->(ids){where "id in (?)", ids}
 end

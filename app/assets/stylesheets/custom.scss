@@ -48,7 +48,6 @@ textarea {
 }
 
 /* forms */
-input,
 textarea,
 select,
 .uneditable-input {
@@ -91,4 +90,7 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+#create_member {
+  display: block;
 }

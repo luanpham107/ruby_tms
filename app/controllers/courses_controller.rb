@@ -24,13 +24,16 @@ class CoursesController < ApplicationController
     @courses = current_user.courses.newest.paginate(page: params[:page])
   end
 
-  def show; end
+  def show
+    @users = @course.users.search_by_name_role.paginate(page: params[:page],
+      per_page: Settings.course.show.paginate.member)
+  end
 
   def edit; end
 
   def update
     if @course.update course_edit_params
-      flash[:success] = t "course.edit.success_message"
+      flash[:success] = t "courses.edit.success_message"
       redirect_to course_path
     else
       render :new
@@ -55,7 +58,7 @@ class CoursesController < ApplicationController
     @course = Course.find_by id: params[:id]
     return if @course
 
-    flash[:danger] = t "course.show.not_found"
+    flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path
   end
 
