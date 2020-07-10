@@ -43,6 +43,19 @@ vi:
       create_new_subject: "Tạo môn học mới"
     create:
       success_message: "Tạo một môn học mới thành công"
+    show:
+      title: "Xem môn học"
+      name: "Tên môn học : %{name}"
+      description: "Mô tả môn học : %{description}"
+      duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
+      edit_subject: "Chỉnh siawr môn học"
+    edit:
+      title : "Chỉnh sửa subject"
+      update_subject: "Cập nhật môn học"
+    update:
+      success: "Cập nhật môn học thành công"
+    load_subject:
+      not_found: "Môn học không tồn tại"
   courses:
     new:
       title: "Tạo khóa học mới"

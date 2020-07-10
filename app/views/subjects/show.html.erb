@@ -1,0 +1,12 @@
+ <div class="row">
+  <div class="col-md-6">
+    <%= provide :title, t(".title") %>
+    <h2><%= t ".title" %></h2>
+    <p><%= t ".name", name: @subject.name %></p>
+    <p><%= t ".description", description: @subject.description %></p>
+    <p><%= t ".duration", duration: @subject.duration %></p>
+  </div>
+  <div class="col-md-6">
+    <%= link_to t ".edit_subject", edit_subject_path(@subject), class: "btn btn-warning", role: "button" %>
+  </div>
+</div>

@@ -43,6 +43,19 @@ en:
       create_new_subject: "Create new subject"
     create:
       success_message: "Create a new subject success"
+    show:
+      title: "Show subject"
+      name: "Subject name : %{name}"
+      description: "Subject name : %{description}"
+      duration: "Subject duration (maximum, unit: day) : %{duration}"
+      edit_subject: "Edit subject"
+    edit:
+      title : "Edit subject"
+      update_subject: "Update subject"
+    update:
+      success: "Update subject success"
+    load_subject:
+      not_found: "Subject is not existing"
   courses:
     new:
       title: "Let make a new course"
