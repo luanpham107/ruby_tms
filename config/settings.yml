@@ -5,6 +5,7 @@ course:
   show:
     paginate:
       member: 5
+      subject: 5
   name:
     max_length: 255
   description:

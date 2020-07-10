@@ -1,0 +1,47 @@
+$(document).ready(function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $("#search_subject_form").keypress(function (event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    // Check if key = Enter
+    if (keycode != '13') {
+      return
+    }
+
+    var get_name = $(this).val();
+    if (get_name == '')
+      return;
+
+    $.ajax({
+      url: '/search_subject_by_name',
+      type: 'GET',
+      dataType: 'script',
+      data: {
+        name: get_name,
+        course_id: $('#course_id').val()
+      }
+    })
+  });
+
+  $(document).on('click', '#add_subject_btn', function () {
+    var indexs = [];
+    $(':checkbox:checked').each(function (i) {
+      indexs[i] = parseInt($(this).val());
+    });
+
+    $.ajax({
+      url: '/add_subject_by_name',
+      type: 'POST',
+      dataType: 'script',
+      data: {
+        subjects_id: indexs,
+        course_id: $('#course_id').val()
+      }
+    })
+  });
+
+});

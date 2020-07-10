@@ -25,8 +25,9 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @users = @course.users.search_by_name_role.paginate(page: params[:page],
+    @users = @course.users.search_by_name_role.paginate(page: params[:user_page],
       per_page: Settings.course.show.paginate.member)
+    @added_subjects = @course.subjects.newest
   end
 
   def edit; end
@@ -36,7 +37,7 @@ class CoursesController < ApplicationController
       flash[:success] = t "courses.edit.success_message"
       redirect_to course_path
     else
-      render :new
+      render :edit
     end
   end
 

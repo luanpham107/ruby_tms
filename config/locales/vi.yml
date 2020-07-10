@@ -98,6 +98,16 @@ vi:
       success: " Thêm thành viên thành công "
     load_existing_users:
       not_found: "Người dùng không tồn tại"
+    add_existing_subject:
+      search_hint: "Gõ tên môn học sau đó nhấn Enter!"
+      h3_text: "Môn học"
+      add_subject_btn: "Thêm môn"
+      close_btn: "Đóng"
+      warning: "Lỗi! Không thể thêm môn học."
+      success: "Thêm môn học thành công"
+      table_no: "No."
+      table_name: "Tên"
+      table_description: "Mô tả"
   activerecord:
     attributes:
       user:

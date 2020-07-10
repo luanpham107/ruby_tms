@@ -1,49 +1,103 @@
 <%= provide :title, t("courses.show.title") %>
 <h3><%= @course.name %></h3>
 <%= link_to t("shared.action.edit"), edit_course_path(user_action: "edit_course") %>
-<div class="col-md-6">
-  <p><%= @course.description %></p>
-  <p><%= @course.status.humanize %></p>
-</div>
-
-<div class="col-md-12">
-  <div id="show_member">
-    <%= render "show_member" %>
-  </div>
-  <%= will_paginate @users, previous_label: t("courses.show.previous"), next_label: t("courses.show.next") %>
-  <button type="button" class="btn btn-primary" id="create_member" data-toggle="modal" data-target="#add_member_modal">
-    <%= t ".add_member" %>
-  </button>
-</div>
-
-<div class="modal" id="add_member_modal" data-backdrop="false">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title"><%= t ".add_existing_user" %></h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <div>
-          <%= label_tag :name, t(".fill_in_name") %>
-          <%= text_field_tag :name, nil, class: "form-control" %>
-          <%= hidden_field_tag :course_id, @course.id %>
-        </div>
-        <div id="result_search">
-          <%= render "search_result" %>
-        </div>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p><%= @course.description %></p>
+      <p><%= @course.status.humanize %></p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="show_member">
+        <%= render "show_member" %>
+      </div>
+      <%= will_paginate @users, previous_label: t("courses.show.previous"), next_label: t("courses.show.next"), param_name: "user_page" %>
+      <button type="button" class="btn btn-primary" id="create_member" data-toggle="modal"
+        data-target="#add_member_modal">
+        <%= t ".add_member" %>
+      </button>
+    </div>
+
+    <div class="modal" id="add_member_modal" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title"><%= t ".add_existing_user" %></h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div>
+              <%= label_tag :name, t(".fill_in_name") %>
+              <%= text_field_tag :name, nil, class: "form-control" %>
+              <%= hidden_field_tag :course_id, @course.id %>
+            </div>
+            <div id="result_search">
+              <%= render "search_result" %>
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><%= t("courses.add_existing_subject.close_btn") %></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+        <h3><%= t("courses.add_existing_subject.h3_text") %></h3>
+        <button id="start_search_subject_form" type="button" class="btn btn-primary" data-toggle="modal"
+          data-target="#addSubjectModal">
+          <%= t("courses.add_existing_subject.add_subject_btn") %>
+        </button>
+        <div id="show_added_subject">
+          <%= render "show_subject" %>
+        </div>
+      <!-- Add subject -->
+      <div class="modal" id="addSubjectModal" tabindex="-1" data-backdrop="false" role="dialog"
+        aria-labelledby="addSubjectModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><%= t "courses.add_existing_subject.search_hint" %></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <input id="search_subject_form" class="" type="text" placeholder="" name="search">
+                  <%= hidden_field_tag :course_id, @course.id %>
+                </div>
+                <div class="row">
+                  <div id="add_returned_subjects">
+                    <%= render "add_subject" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="add_subject_btn" type="button"
+                class="btn btn-primary"><%= t("courses.add_existing_subject.add_subject_btn") %></button>
+              <button type="button" class="btn btn-secondary"
+                data-dismiss="modal"><%= t("courses.add_existing_subject.close_btn") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div>
 </div>
+
 <%= javascript_pack_tag "course_show", "data-turbolinks-track": "reload" %>
+<%= javascript_pack_tag "add_subject", "data-turbolinks-track": "reload" %>

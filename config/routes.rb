@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     delete "/log-out", to: "sessions#destroy"
     get "/search_user_by_name", to: "searchs#search_user_by_name"
     post "/add_existing_user_to_course", to: "user_courses#create"
+    get "/search_subject_by_name", to: "searchs#search_subject_by_name"
+    post "/add_subject_by_name", to: "course_details#create"
 
     resources :subjects, except: %i(index destroy)
     resources :courses, except: :destroy

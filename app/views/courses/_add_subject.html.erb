@@ -1,0 +1,9 @@
+<% if @subjects.present? %>
+  <% @subjects.each do |s| %>
+    <li>
+      <%= check_box_tag "subject", s.id, false, class: "form-check-input" %>
+      <%= s.name %> | <%= s.description %>
+    </li>
+  <% end %>
+<% else %>
+<% end %>
