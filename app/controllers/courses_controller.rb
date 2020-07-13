@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
       flash[:success] = t "courses.edit.success_message"
       redirect_to course_path
     else
-      render :new
+      render :edit
     end
   end
 

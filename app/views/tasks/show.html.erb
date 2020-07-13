@@ -1,0 +1,5 @@
+<%= provide :title, t(".title") %>
+<h2><%= t ".title" %></h2>
+<p><%= t ".name", name: @task.name %></p>
+<p><%= t ".description", description: @task.description %></p>
+<%= link_to t(".back_to_subject"), @task.subject, class: "btn btn-primary" %>

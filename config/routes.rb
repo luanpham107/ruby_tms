@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get "/search_user_by_name", to: "searchs#search_user_by_name"
     post "/add_existing_user_to_course", to: "user_courses#create"
 
-    resources :subjects, except: %i(index destroy)
+    resources :subjects, except: %i(index destroy) do
+        resources :tasks, only: %i(show edit update)
+    end
     resources :courses, except: :destroy
     resources :user_courses, only: :create
   end

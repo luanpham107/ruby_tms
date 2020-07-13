@@ -64,6 +64,24 @@ vi:
       remove_task: "Xóa tác vụ"
     show_task:
       number_task: "Tác vụ: (%{number})"
+  tasks:
+    show:
+      title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
+      name: "Tên tác vụ: %{name}"
+      description: "Mô tả tác vụ : %{description}"
+      back_to_subject: "Quay trở lại môn học"
+    task:
+      view_detail: "Xem chi tiết"
+      edit_task: "Chỉnh sửa tác vụ"
+    edit:
+      title: "Chỉnh sửa một tác vụ xác định bên trong một môn học cụ thể"
+      back_to_subject: "Quay trở lại môn học"
+    update:
+      success: "Cập nhật tác vụ thành công"
+    task_form:
+      update_task: "Cập nhật tác vụ"
+    load_task:
+      not_found: "Tác vụ không tồn tại"
   courses:
     new:
       title: "Tạo khóa học mới"

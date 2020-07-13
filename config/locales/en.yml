@@ -46,7 +46,7 @@ en:
     show:
       title: "Show subject"
       name: "Subject name : %{name}"
-      description: "Subject name : %{description}"
+      description: "Subject description : %{description}"
       duration: "Subject duration (maximum, unit: day) : %{duration}"
       edit_subject: "Edit subject"
       previous: "Previous page"
@@ -64,6 +64,24 @@ en:
       remove_task: "Remove task"
     show_task:
       number_task: "Task: (%{number})"
+  tasks:
+    show:
+      title: "View specfic task within specfic subject"
+      name: "Task name: %{name}"
+      description: "Task description : %{description}"
+      back_to_subject: "Back to subject"
+    edit:
+      title: "Edit a specfic task within a specfic subject"
+      back_to_subject: "Back to subject"
+    update:
+      success: "Update task success"
+    task_form:
+      update_task: "Update task"
+    task:
+      view_detail: "View detail"
+      edit_task: "Edit task"
+    load_task:
+      not_found: "Task is not existing"
   courses:
     new:
       title: "Let make a new course"
