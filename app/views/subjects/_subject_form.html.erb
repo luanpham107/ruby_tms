@@ -7,12 +7,14 @@
   <%= f.label :duration %>
   <%= f.number_field :duration, class: "form-control", min: Settings.subject_form.duration.min %>
   <hr>
-  <div class="sub_task">
-    <%= f.fields_for :tasks do |ff| %>
-      <%= render "task_fields", f: ff %>
-    <% end %>
-  </div>
-  <%= link_to t(".add_task"), "#", id: "sub-field", class: "btn btn-info", data: {field: sub_task_field(f)} %>
+  <% if new_action? %>
+    <div class="sub_task">
+      <%= f.fields_for :tasks do |ff| %>
+        <%= render "task_fields", f: ff %>
+      <% end %>
+    </div>
+    <%= link_to t(".add_task"), "#", id: "sub-field", class: "btn btn-info", data: {field: sub_task_field(f)} %>
+  <% end %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
 <%= javascript_pack_tag "subject_new", "data-turbolinks-track": "reload" %>

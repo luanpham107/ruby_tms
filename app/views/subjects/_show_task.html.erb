@@ -1,0 +1,6 @@
+<% if @tasks %>
+  <h3><%= t(".number_task", number: @subject.tasks.count) %></h3>
+  <ol>
+    <%= render @tasks %>
+  </ol>
+<% end %>
