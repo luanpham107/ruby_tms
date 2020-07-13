@@ -1,0 +1,10 @@
+$(document).on('click', '#sub-field', function(e){
+  e.preventDefault();
+  var field = $(this).data('field');
+  var new_id = $(".nested-fields").length;
+  $('.sub_task').append(field.replace(/index/g, new_id));
+});
+
+$(document).on('click', '.remove-btn', function() {
+  $(this).parent().remove();
+})

@@ -56,6 +56,10 @@ en:
       success: "Update subject success"
     load_subject:
       not_found: "Subject is not existing"
+    subject_form:
+      add_task: "Add task"
+    task_fields:
+      remove_task: "Remove task"
   courses:
     new:
       title: "Let make a new course"
@@ -108,6 +112,9 @@ en:
           pending: "Pending"
           open: "Open"
           closed: "Closed"
+      task:
+        name: "Task name:"
+        description: "Task description"
     errors:
       models:
         user:

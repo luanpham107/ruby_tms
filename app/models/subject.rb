@@ -7,6 +7,7 @@ class Subject < ApplicationRecord
 
   # Relation between Task and User
   has_many :tasks, dependent: :destroy
+  accepts_nested_attributes_for :tasks
 
   # validates:
   validates :name, presence: true

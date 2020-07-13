@@ -6,6 +6,7 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
+    @subject.tasks.new
   end
 
   def show; end
@@ -15,6 +16,7 @@ class SubjectsController < ApplicationController
       flash[:success] = t "subjects.create.success_message"
       redirect_to root_path
     else
+      @subject.tasks || @subject.tasks.build
       render :new
     end
   end
@@ -33,7 +35,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject_params
-    params.require(:subject).permit(:name, :description, :duration)
+    params.require(:subject).permit(:name, :description, :duration, tasks_attributes: [:name, :description])
   end
 
   def build_subject
