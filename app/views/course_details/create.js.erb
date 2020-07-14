@@ -1,0 +1,8 @@
+var allCheckedInputs = $(':input:checked')
+if (allCheckedInputs.length != 0) {
+
+  for (i = 0; i < allCheckedInputs.length; i++) {
+    allCheckedInputs[i].parentNode.remove();
+  }
+}
+$('#show_added_subject').html('<%= j render "courses/show_subject" %>');
