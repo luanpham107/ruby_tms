@@ -13,7 +13,8 @@ class User < ApplicationRecord
   has_many :tasks, through: :process_tasks
 
   # Relation between User and Subject
-  has_many :subjects, dependent: :destroy
+  has_many :user_subjects, dependent: :destroy
+  has_many :subjects, through: :user_subjects
   has_secure_password
 
   # scope:
