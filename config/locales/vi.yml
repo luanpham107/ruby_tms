@@ -127,6 +127,8 @@ vi:
         table_no: "No."
         table_name: "Tên"
         table_description: "Mô tả"
+      load_existing_subjects:
+        not_found: "Lỗi! Không tồn tại khóa học trên CSDL"
   activerecord:
     attributes:
       user:

@@ -16,7 +16,6 @@ class Admin::CoursesController < ApplicationController
     flash[:success] = t "admin.courses.create.success_message"
     redirect_to admin_courses_path
   rescue
-    byebug
     flash.now[:danger] = t "admin.courses.create.fail_message"
     render :new
   end

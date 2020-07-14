@@ -7,6 +7,10 @@ class Admin::SearchsController < ApplicationController
   end
 
   def search_subject_by_name
+    unless @course.subjects.ids.present?
+      @subjects = Subject.search_by_name params[:name]
+      return if @subjects
+    end
     @subjects = Subject.by_name_without_ids params[:name], @course.subjects.ids
   end
 

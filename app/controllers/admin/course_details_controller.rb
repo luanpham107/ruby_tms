@@ -1,11 +1,10 @@
 class Admin::CourseDetailsController < ApplicationController
   before_action :logged_in_user
-  before_action :is_trainer?, :load_course, only: :create
+  before_action :is_trainer?, :load_course, :load_existing_subjects, only: :create
 
   def create
-    subjects_id = params[:subjects_id]
     CourseDetail.transaction do
-      subjects_id.each do |sid|
+      @will_save_subject_ids.each do |sid|
         CourseDetail.create! status: CourseDetail.statuses[:pending], course_id: params[:course_id], subject_id: sid
       end
 
@@ -24,5 +23,13 @@ class Admin::CourseDetailsController < ApplicationController
 
     flash[:warning] = t "admin.courses.load_course.not_found"
     redirect_to root_path
+  end
+
+  def load_existing_subjects
+    @will_save_subject_ids = (Subject.search_by_ids params[:subject_ids]).pluck(:id)
+    return if @will_save_subject_ids.present?
+
+    flash[:warning] = t "admin.courses.load_existing_subjects.not_found"
+    redirect_to [:admin, @course]
   end
 end
