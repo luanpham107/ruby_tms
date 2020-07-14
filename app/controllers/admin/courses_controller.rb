@@ -1,4 +1,4 @@
-class CoursesController < ApplicationController
+class Admin::CoursesController < ApplicationController
   before_action :logged_in_user
   before_action :load_course, only: %i(show edit update)
   before_action :is_owner?, only: %i(edit update)
@@ -13,15 +13,16 @@ class CoursesController < ApplicationController
       @course.save!
       UserCourse.create! user: current_user, course: @course
     end
-    flash[:success] = t "course.create.success_message"
-    redirect_to courses_path
+    flash[:success] = t "admin.courses.create.success_message"
+    redirect_to admin_courses_path
   rescue
-    flash.now[:danger] = t "course.create.fail_message"
+    byebug
+    flash.now[:danger] = t "admin.courses.create.fail_message"
     render :new
   end
 
   def index
-    @courses = current_user.courses.newest.paginate(page: params[:page])
+    @courses = Course.newest.paginate(page: params[:page])
   end
 
   def show
@@ -34,8 +35,8 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update course_edit_params
-      flash[:success] = t "courses.edit.success_message"
-      redirect_to course_path
+      flash[:success] = t "admin.courses.edit.success_message"
+      redirect_to [:admin,  @course]
     else
       render :edit
     end
@@ -67,6 +68,6 @@ class CoursesController < ApplicationController
     return if current_user.user_courses.find_by(course_id: @course.id)&.owner?
 
     flash[:danger] = t "application.is_owner.not_permit"
-    redirect_to course_path
+    redirect_to admin_course_path
   end
 end

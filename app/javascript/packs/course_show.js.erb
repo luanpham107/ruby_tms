@@ -4,13 +4,12 @@ $(document).ready(function(){
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-
   $('#name').change(function(e){
     var name = $(this).val();
     var course_id = $('#course_id').val()
     $.ajax({
       method: 'GET',
-      url: '/search_user_by_name',
+      url: '/admin/search_user_by_name',
       dataType: 'script',
       data: {
         name: name,
@@ -30,7 +29,7 @@ $(document).ready(function(){
     if(val.length > 0) {
       $.ajax({
         method: 'POST',
-        url: '/add_existing_user_to_course',
+        url: '/admin/add_existing_user_to_course',
         dataType: 'script',
         data: {
           user_ids: JSON.stringify(val),

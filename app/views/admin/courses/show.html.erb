@@ -1,13 +1,12 @@
-<%= provide :title, t("courses.show.title") %>
+<%= provide :title, t("admin.courses.show.title") %>
 <h3><%= @course.name %></h3>
-<%= link_to t("shared.action.edit"), edit_course_path(user_action: "edit_course") %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <p><%= @course.description %></p>
-      <p><%= @course.status.humanize %></p>
-    </div>
-  </div>
+<%= link_to t("shared.action.edit"), edit_admin_course_path(user_action: "edit_course") %>
+<div class="col-md-6">
+  <p><%= @course.description %></p>
+  <p><%= @course.status.humanize %></p>
+</div>
+
+<div class="col-md-12">
   <div class="row">
     <div class="col-md-12">
       <div id="show_member">
@@ -54,10 +53,10 @@
 
   <div class="row">
     <div class="col-md-12">
-        <h3><%= t("courses.add_existing_subject.h3_text") %></h3>
+        <h3><%= t("admin.courses.add_existing_subject.h3_text") %></h3>
         <button id="start_search_subject_form" type="button" class="btn btn-primary" data-toggle="modal"
           data-target="#addSubjectModal">
-          <%= t("courses.add_existing_subject.add_subject_btn") %>
+          <%= t("admin.courses.add_existing_subject.add_subject_btn") %>
         </button>
         <div id="show_added_subject">
           <%= render "show_subject" %>
@@ -68,7 +67,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title"><%= t "courses.add_existing_subject.search_hint" %></h5>
+              <h5 class="modal-title"><%= t "admin.courses.add_existing_subject.search_hint" %></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -88,9 +87,9 @@
             </div>
             <div class="modal-footer">
               <button id="add_subject_btn" type="button"
-                class="btn btn-primary"><%= t("courses.add_existing_subject.add_subject_btn") %></button>
+                class="btn btn-primary"><%= t("admin.courses.add_existing_subject.add_subject_btn") %></button>
               <button type="button" class="btn btn-secondary"
-                data-dismiss="modal"><%= t("courses.add_existing_subject.close_btn") %></button>
+                data-dismiss="modal"><%= t("admin.courses.add_existing_subject.close_btn") %></button>
             </div>
           </div>
         </div>

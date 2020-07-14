@@ -3,5 +3,5 @@
 <div class="col-md-12">
   <%= render "task_form" %>
   <hr>
-  <%= link_to t(".back_to_subject"), @task.subject, class: "btn btn-primary" %>
+  <%= link_to t(".back_to_subject"), [:admin, @task.subject], class: "btn btn-primary" %>
 </div>

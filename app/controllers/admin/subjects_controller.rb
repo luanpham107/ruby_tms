@@ -1,4 +1,4 @@
-class SubjectsController < ApplicationController
+class Admin::SubjectsController < ApplicationController
   before_action :logged_in_user
   before_action :is_trainer?
   before_action :build_subject, only: :create
@@ -16,7 +16,7 @@ class SubjectsController < ApplicationController
 
   def create
     if @subject.save
-      flash[:success] = t "subjects.create.success_message"
+      flash[:success] = t "admin.subjects.create.success_message"
       redirect_to root_path
     else
       @subject.tasks || @subject.tasks.build
@@ -29,7 +29,7 @@ class SubjectsController < ApplicationController
   def update
     if @subject.update subject_params
       flash[:success] = t ".success"
-      redirect_to @subject
+      redirect_to [:admin, @subject]
     else
       render :edit
     end
@@ -42,14 +42,14 @@ class SubjectsController < ApplicationController
   end
 
   def build_subject
-    @subject = current_user.subjects.build subject_params
+    @subject = Subject.new subject_params
   end
 
   def load_subject
     @subject = Subject.find_by id: params[:id]
     return if @subject
 
-    flash[:warning] = t "subjects.load_subject.not_found"
+    flash[:warning] = t "admin.subjects.load_subject.not_found"
     redirect_to root_path
   end
 end

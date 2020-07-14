@@ -8,13 +8,13 @@
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= t "shared.header.course.link" %> <b class="caret"></b>
+              <%= t "admin.shared.header.course.link" %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <% if current_user.trainer? %>
-                <li><%= link_to t("shared.header.course.new"), new_course_path %></li>
+                <li><%= link_to t("shared.header.course.new"), new_admin_course_path %></li>
               <% end %>
-              <li><%= link_to t("shared.header.course.visit"), courses_path %></li>
+              <li><%= link_to t("shared.header.course.visit"), admin_courses_path %></li>
             </ul>
           </li>
           <li class="dropdown">

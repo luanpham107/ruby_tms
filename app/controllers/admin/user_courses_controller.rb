@@ -1,4 +1,4 @@
-class UserCoursesController < ApplicationController
+class Admin::UserCoursesController < ApplicationController
   before_action :load_existing_users, :load_existing_course, :is_trainer?, only: :create
 
   def create

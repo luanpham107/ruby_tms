@@ -8,23 +8,6 @@ en:
       not_permit: "Sorry, you don't have permission"
     is_owner:
       not_permit: "Sorry, you must be the owner to edit."
-  shared:
-    header:
-      app_name: "Management System"
-      home: "Home"
-      account: "Account"
-      profile: "Profile"
-      setting: "Setting"
-      log_out: "Log out"
-      log_in: "Log in"
-      subject: "Subject"
-      course:
-        link: "Course"
-        visit: "Visit your course"
-        new: "Make a new course"
-    action:
-      edit: "Edit"
-      delete: "Delete"
   static_pages:
     home:
       title: "Home"
@@ -37,95 +20,113 @@ en:
       log_in: "Log in"
     create:
       invalid : "Invalid Email/Password"
-  subjects:
-    new:
-      title: "Subject"
-      create_new_subject: "Create new subject"
-    create:
-      success_message: "Create a new subject success"
-    show:
-      title: "Show subject"
-      name: "Subject name : %{name}"
-      description: "Subject description : %{description}"
-      duration: "Subject duration (maximum, unit: day) : %{duration}"
-      edit_subject: "Edit subject"
-      previous: "Previous page"
-      next: "Next page"
-    edit:
-      title : "Edit subject"
-      update_subject: "Update subject"
-    update:
-      success: "Update subject success"
-    load_subject:
-      not_found: "Subject is not existing"
-    subject_form:
-      add_task: "Add task"
-    task_fields:
-      remove_task: "Remove task"
-    show_task:
-      number_task: "Task: (%{number})"
-  tasks:
-    show:
-      title: "View specfic task within specfic subject"
-      name: "Task name: %{name}"
-      description: "Task description : %{description}"
-      back_to_subject: "Back to subject"
-    edit:
-      title: "Edit a specfic task within a specfic subject"
-      back_to_subject: "Back to subject"
-    update:
-      success: "Update task success"
-    task_form:
-      update_task: "Update task"
-    task:
-      view_detail: "View detail"
-      edit_task: "Edit task"
-    load_task:
-      not_found: "Task is not existing"
-  courses:
-    new:
-      title: "Let make a new course"
-      submit_btn: "Create new course"
-    create:
-      success_message: "Your course was created succsessfully."
-      fail_message: "Can not save course to user."
-    visit:
-      title: "Here is list of your course"
-    show:
-      not_found: "This course is not exist."
-      title: "Course"
-      status: "Status: "
-      add_member: "Add member"
-      add_existing_user: "Add existing user into course: "
-      fill_in_name: "Fill in name you want to search"
-      choose_message: "Please choose user before clicking Add member button"
-      previous: "Previous"
-      next: "Next"
-    edit:
-      title: "Edit this course"
-      submit_btn: "Update this course"
-      success_message: "Your course was edited and saved succsessfully."
-    show_member:
-      number_member: "Member: (%{number})"
-    search_result:
-      add: "Add member"
-    load_course:
-      not_found: "Course is not existing"
-    add_existing_user:
-      warning: " Error! Adding member failed"
-      success: "Adding member success"
-    load_existing_users:
-      not_found: "user is not existing"
-    add_existing_subject:
-      search_hint: "Enter subject name then press Enter!"
-      h3_text: "Subjects"
-      add_subject_btn: "Add subjects"
-      close_btn: "Close"
-      warning: "Error! Addiing subects failed"
-      success: "Adding member success"
-      table_no: "No."
-      table_name: "Name"
-      table_description: "Description"
+  admin:
+    shared:
+      header:
+        app_name: "Management System"
+        home: "Home"
+        account: "Account"
+        profile: "Profile"
+        setting: "Setting"
+        log_out: "Log out"
+        log_in: "Log in"
+        subject: "Subject"
+        course:
+          link: "Course"
+          visit: "Visit your course"
+          new: "Make a new course"
+      action:
+        edit: "Edit"
+        delete: "Delete"
+    subjects:
+      new:
+        title: "Subject"
+        create_new_subject: "Create new subject"
+      create:
+        success_message: "Create a new subject success"
+      show:
+        title: "Show subject"
+        name: "Subject name : %{name}"
+        description: "Subject description : %{description}"
+        duration: "Subject duration (maximum, unit: day) : %{duration}"
+        edit_subject: "Edit subject"
+        previous: "Previous page"
+        next: "Next page"
+      edit:
+        title : "Edit subject"
+        update_subject: "Update subject"
+      update:
+        success: "Update subject success"
+      load_subject:
+        not_found: "Subject is not existing"
+      subject_form:
+        add_task: "Add task"
+      task_fields:
+        remove_task: "Remove task"
+      show_task:
+        number_task: "Task: (%{number})"
+    tasks:
+      show:
+        title: "View specfic task within specfic subject"
+        name: "Task name: %{name}"
+        description: "Task description : %{description}"
+        back_to_subject: "Back to subject"
+      edit:
+        title: "Edit a specfic task within a specfic subject"
+        back_to_subject: "Back to subject"
+      update:
+        success: "Update task success"
+      task_form:
+        update_task: "Update task"
+      task:
+        view_detail: "View detail"
+        edit_task: "Edit task"
+      load_task:
+        not_found: "Task is not existing"
+    courses:
+      new:
+        title: "Let make a new course"
+        submit_btn: "Create new course"
+      create:
+        success_message: "Your course was created succsessfully."
+        fail_message: "Can not save course to user."
+      visit:
+        title: "Here is list of your course"
+      show:
+        not_found: "This course is not exist."
+        title: "Course"
+        status: "Status: "
+        add_member: "Add member"
+        add_existing_user: "Add existing user into course: "
+        fill_in_name: "Fill in name you want to search"
+        choose_message: "Please choose user before clicking Add member button"
+        previous: "Previous"
+        next: "Next"
+      edit:
+        title: "Edit this course"
+        submit_btn: "Update this course"
+        success_message: "Your course was edited and saved succsessfully."
+      show_member:
+        number_member: "Member: (%{number})"
+      search_result:
+        add: "Add member"
+      load_course:
+        not_found: "Course is not existing"
+      add_existing_user:
+        warning: " Error! Adding member failed"
+        success: "Adding member success"
+      load_existing_users:
+        not_found: "user is not existing"
+      add_existing_subject:
+        search_hint: "Enter subject name then press Enter!"
+        h3_text: "Subjects"
+        add_subject_btn: "Add subjects"
+        close_btn: "Close"
+        warning: "Error! Addiing subects failed"
+        success: "Adding member success"
+        table_no: "No."
+        table_name: "Name"
+        table_description: "Description"
   activerecord:
     attributes:
       user:

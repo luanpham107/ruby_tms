@@ -8,23 +8,6 @@ vi:
       not_permit: "Xin lỗi, bạn không có quyền"
     is_owner:
       not_permit: "Xin lỗi, chỉ có owner mới chỉnh sửa được khóa học."
-  shared:
-    header:
-      app_name: "Hệ thống quản lý"
-      home: "Trang chủ"
-      account: "Tài khoản"
-      profile: "Hồ sơ cá nhân"
-      setting: "Thiết lập"
-      log_out: "Đăng xuất"
-      log_in: "Đăng nhập"
-      subject: "Môn học"
-      course:
-        link: "Khóa học"
-        visit: "Xem khóa học của bạn"
-        new: "Tạo khóa học mới"
-    action:
-      edit: "Chỉnh sửa"
-      delete: "Xóa"
   static_pages:
     home:
       title: "Trang chính"
@@ -37,95 +20,113 @@ vi:
       log_in: "Đăng nhập"
     create:
       invalid : "E-mail/Mật khẩu không chính xác"
-  subjects:
-    new:
-      title: "Môn học"
-      create_new_subject: "Tạo môn học mới"
-    create:
-      success_message: "Tạo một môn học mới thành công"
-    show:
-      title: "Xem môn học"
-      name: "Tên môn học : %{name}"
-      description: "Mô tả môn học : %{description}"
-      duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
-      edit_subject: "Chỉnh sửa môn học"
-      previous: "Trang trước"
-      next: "Trang sau"
-    edit:
-      title : "Chỉnh sửa subject"
-      update_subject: "Cập nhật môn học"
-    update:
-      success: "Cập nhật môn học thành công"
-    load_subject:
-      not_found: "Môn học không tồn tại"
-    subject_form:
-      add_task: "Thêm tác vụ"
-    task_fields:
-      remove_task: "Xóa tác vụ"
-    show_task:
-      number_task: "Tác vụ: (%{number})"
-  tasks:
-    show:
-      title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
-      name: "Tên tác vụ: %{name}"
-      description: "Mô tả tác vụ : %{description}"
-      back_to_subject: "Quay trở lại môn học"
-    task:
-      view_detail: "Xem chi tiết"
-      edit_task: "Chỉnh sửa tác vụ"
-    edit:
-      title: "Chỉnh sửa một tác vụ xác định bên trong một môn học cụ thể"
-      back_to_subject: "Quay trở lại môn học"
-    update:
-      success: "Cập nhật tác vụ thành công"
-    task_form:
-      update_task: "Cập nhật tác vụ"
-    load_task:
-      not_found: "Tác vụ không tồn tại"
-  courses:
-    new:
-      title: "Tạo khóa học mới"
-      submit_btn: "Nhấn nút để khởi tạo"
-    create:
-      success_message: "Khởi tạo khóa học thành công."
-      fail_message: "Không thể lưu khóa học này"
-    visit:
-      title: "Tất cả khóa học"
-    show:
-      not_found: "Khóa học này không tồn tại."
-      title: "Khóa học"
-      status: "Trạng thái: "
-      add_member: "Thêm thành viên"
-      add_existing_user: "Thêm người dùng đã tồn tại vào khóa học :"
-      fill_in_name: "Điền tên mà bạn muốn tìm "
-      choose_message: "Vui lòng chọn trước khi bấm nút thêm thành viên"
-      previous: "Trước"
-      next: "Sau"
-    edit:
-      title: "Chỉnh sửa khóa học"
-      submit_btn: "Cập nhập khóa học"
-      success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"
-    show_member:
-      number_member: "Thành viên: (%{number})"
-    search_result:
-      add: "Thêm thành mới"
-    load_course:
-      not_found: "Khóa học này không tồn tại"
-    add_existing_user:
-      warning: " Lỗi! Thêm thành viên thất bại"
-      success: " Thêm thành viên thành công "
-    load_existing_users:
-      not_found: "Người dùng không tồn tại"
-    add_existing_subject:
-      search_hint: "Gõ tên môn học sau đó nhấn Enter!"
-      h3_text: "Môn học"
-      add_subject_btn: "Thêm môn"
-      close_btn: "Đóng"
-      warning: "Lỗi! Không thể thêm môn học."
-      success: "Thêm môn học thành công"
-      table_no: "No."
-      table_name: "Tên"
-      table_description: "Mô tả"
+  admin:
+    shared:
+      header:
+        app_name: "Hệ thống quản lý"
+        home: "Trang chủ"
+        account: "Tài khoản"
+        profile: "Hồ sơ cá nhân"
+        setting: "Thiết lập"
+        log_out: "Đăng xuất"
+        log_in: "Đăng nhập"
+        subject: "Môn học"
+        course:
+          link: "Khóa học"
+          visit: "Xem khóa học của bạn"
+          new: "Tạo khóa học mới"
+      action:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+    subjects:
+      new:
+        title: "Môn học"
+        create_new_subject: "Tạo môn học mới"
+      create:
+        success_message: "Tạo một môn học mới thành công"
+      show:
+        title: "Xem môn học"
+        name: "Tên môn học : %{name}"
+        description: "Mô tả môn học : %{description}"
+        duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
+        edit_subject: "Chỉnh sửa môn học"
+        previous: "Trang trước"
+        next: "Trang sau"
+      edit:
+        title : "Chỉnh sửa subject"
+        update_subject: "Cập nhật môn học"
+      update:
+        success: "Cập nhật môn học thành công"
+      load_subject:
+        not_found: "Môn học không tồn tại"
+      subject_form:
+        add_task: "Thêm tác vụ"
+      task_fields:
+        remove_task: "Xóa tác vụ"
+      show_task:
+        number_task: "Tác vụ: (%{number})"
+    tasks:
+      show:
+        title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
+        name: "Tên tác vụ: %{name}"
+        description: "Mô tả tác vụ : %{description}"
+        back_to_subject: "Quay trở lại môn học"
+      task:
+        view_detail: "Xem chi tiết"
+        edit_task: "Chỉnh sửa tác vụ"
+      edit:
+        title: "Chỉnh sửa một tác vụ xác định bên trong một môn học cụ thể"
+        back_to_subject: "Quay trở lại môn học"
+      update:
+        success: "Cập nhật tác vụ thành công"
+      task_form:
+        update_task: "Cập nhật tác vụ"
+      load_task:
+        not_found: "Tác vụ không tồn tại"
+    courses:
+      new:
+        title: "Tạo khóa học mới"
+        submit_btn: "Nhấn nút để khởi tạo"
+      create:
+        success_message: "Khởi tạo khóa học thành công."
+        fail_message: "Không thể lưu khóa học này"
+      visit:
+        title: "Tất cả khóa học"
+      show:
+        not_found: "Khóa học này không tồn tại."
+        title: "Khóa học"
+        status: "Trạng thái: "
+        add_member: "Thêm thành viên"
+        add_existing_user: "Thêm người dùng đã tồn tại vào khóa học :"
+        fill_in_name: "Điền tên mà bạn muốn tìm "
+        choose_message: "Vui lòng chọn trước khi bấm nút thêm thành viên"
+        previous: "Trước"
+        next: "Sau"
+      edit:
+        title: "Chỉnh sửa khóa học"
+        submit_btn: "Cập nhập khóa học"
+        success_message: "Khóa học đã được chỉnh sửa & cập nhập thành công"
+      show_member:
+        number_member: "Thành viên: (%{number})"
+      search_result:
+        add: "Thêm thành mới"
+      load_course:
+        not_found: "Khóa học này không tồn tại"
+      add_existing_user:
+        warning: " Lỗi! Thêm thành viên thất bại"
+        success: " Thêm thành viên thành công "
+      load_existing_users:
+        not_found: "Người dùng không tồn tại"
+      add_existing_subject:
+        search_hint: "Gõ tên môn học sau đó nhấn Enter!"
+        h3_text: "Môn học"
+        add_subject_btn: "Thêm môn"
+        close_btn: "Đóng"
+        warning: "Lỗi! Không thể thêm môn học."
+        success: "Thêm môn học thành công"
+        table_no: "No."
+        table_name: "Tên"
+        table_description: "Mô tả"
   activerecord:
     attributes:
       user:

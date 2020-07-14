@@ -17,7 +17,7 @@ $(document).ready(function () {
       return;
 
     $.ajax({
-      url: '/search_subject_by_name',
+      url: '/admin/search_subject_by_name',
       type: 'GET',
       dataType: 'script',
       data: {
@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
 
     $.ajax({
-      url: '/add_subject_by_name',
+      url: '/admin/add_subject_by_name',
       type: 'POST',
       dataType: 'script',
       data: {
