@@ -102,14 +102,13 @@ en:
         choose_message: "Please choose user before clicking Add member button"
         previous: "Previous"
         next: "Next"
+        add: "Add member"
       edit:
         title: "Edit this course"
         submit_btn: "Update this course"
         success_message: "Your course was edited and saved succsessfully."
       show_member:
         number_member: "Member: (%{number})"
-      search_result:
-        add: "Add member"
       load_course:
         not_found: "Course is not existing"
       add_existing_user:

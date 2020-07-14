@@ -18,9 +18,9 @@ $(document).ready(function(){
     });
   })
 
-  $(document).on('click','#add_member', function(){
+  $('#add_member').on('click', function(){
     var val = [];
-    var course_id = $('#course_id').val()
+    var course_id = $('#course_id').val();
 
     $(':checkbox:checked').each(function(i){
       val[i] = parseInt($(this).val());
