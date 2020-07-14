@@ -16,4 +16,6 @@ class Subject < ApplicationRecord
   scope :by_name_without_ids, ->(name, not_in){where "name like ? and id not in (?) ", "%#{name}%", not_in}
   scope :sort_by_name, ->{order "name ASC"}
   scope :newest, ->{order created_at: :desc}
+  scope :search_by_ids, ->(ids){where "id in (?)", ids}
+  scope :search_by_name, ->(name){where "name like ?", "%#{name}%"}
 end

@@ -127,6 +127,8 @@ en:
         table_no: "No."
         table_name: "Name"
         table_description: "Description"
+      load_existing_subjects:
+        not_found: "Error! Subject is not in database"
   activerecord:
     attributes:
       user:
