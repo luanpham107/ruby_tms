@@ -126,8 +126,14 @@ vi:
         table_no: "No."
         table_name: "Tên"
         table_description: "Mô tả"
+        table_status: "Trạng thái"
       load_existing_subjects:
         not_found: "Lỗi! Không tồn tại khóa học trên CSDL"
+      edit_subject_status:
+        success: "Chỉnh sửa trạng thái khóa học thành công!"
+    course_details:
+      update:
+        course_is_pending_or_closed: "Không thể edit do khóa học chưa bắt đầu hoặc đã đóng"
   courses:
     show:
       not_found: "Khóa học này không tồn tại."
@@ -152,6 +158,8 @@ vi:
       table_name: "Tên"
       table_description: "Mô tả"
       table_status: "Trạng thái"
+    load_course:
+      not_found: "Khóa học không tồn tại"
   subjects:
     show:
       title: "Xem môn học"
@@ -189,6 +197,11 @@ vi:
           pending: "Chưa bắt đầu"
           open: "Đang diễn ra"
           closed: "Đóng"
+      course_detail:
+        statuses:
+          pending: "Chưa bắt đầu"
+          open: "Đang diễn ra"
+          finished: "Kết thúc"
       task:
         name: "Tên tác vụ:"
         description: "Mô tả tác vụ"

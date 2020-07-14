@@ -3,10 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 require("@rails/ujs").start()
+require("jquery")
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery")
 import "bootstrap"
 import I18n from "i18n-js";
 global.I18n = I18n;

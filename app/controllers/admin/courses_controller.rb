@@ -1,6 +1,6 @@
 class Admin::CoursesController < ApplicationController
   before_action :logged_in_user
-  before_action :load_course, only: %i(show edit update)
+  before_action :load_course, :load_added_subjects, only: %i(show edit update)
   before_action :is_owner?, only: %i(edit update)
   before_action :build_course, only: :create
 
@@ -27,7 +27,6 @@ class Admin::CoursesController < ApplicationController
   def show
     @users = @course.users.search_by_name_role.paginate(page: params[:user_page],
       per_page: Settings.course.show.paginate.member)
-    @added_subjects = @course.subjects.newest
   end
 
   def edit; end
@@ -68,5 +67,17 @@ class Admin::CoursesController < ApplicationController
 
     flash[:danger] = t "application.is_owner.not_permit"
     redirect_to admin_course_path
+  end
+
+  def load_added_subjects
+    subjects = @course.subjects.newest
+    @added_subjects = Hash.new
+    subjects.each do |ad|
+      @added_subjects.store(ad, load_subject_status(ad, @course))
+    end
+  end
+
+  def load_subject_status subject, course
+    subject.course_details.find_by(course_id: course.id).status.humanize
   end
 end
