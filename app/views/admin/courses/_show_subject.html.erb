@@ -5,19 +5,25 @@
         <th scope="col"><%= t "admin.courses.add_existing_subject.table_no" %></th>
         <th scope="col"><%= t "admin.courses.add_existing_subject.table_name" %></th>
         <th scope="col"><%= t "admin.courses.add_existing_subject.table_description" %></th>
+        <th scope="col"><%= t "admin.courses.add_existing_subject.table_status" %></th>
       </tr>
     </thead>
     <tbody>
       <% if @added_subjects.present? %>
-        <% @added_subjects.each_with_index do |s, index| %>
-        <tr>
+        <% @added_subjects.each_with_index {|(subject,status),index| %>  
+          <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td><%= s.name %></td>
-          <td><%= s.description %></td>
+          <td><%= subject.name %></td>
+          <td><%= subject.description %></td>
+          <td>
+            <%= select_tag("select_subject_status" + (index + 1).to_s, options_for_select(subject_detail_statuses_generator, selected: status.downcase), class:"select") %>
+            <%= hidden_field_tag :subject_id, subject.id %>
+          </td>
         </tr>
-        <% end %>
+        <% } %>
       <% else %>
       <% end %>
     </tbody>
+    <%= hidden_field_tag :course_id, @course.id %>
   </table>
 </div>

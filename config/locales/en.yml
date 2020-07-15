@@ -126,8 +126,14 @@ en:
         table_no: "No."
         table_name: "Name"
         table_description: "Description"
+        table_status: "Status"
       load_existing_subjects:
         not_found: "Error! Subject is not in database"
+      edit_subject_status:
+        success: "Change subject's status done!"
+    course_details:
+      update:
+        course_is_pending_or_closed: "Can not edit because course is pending or closed"
   courses:
     show:
       not_found: "This course is not exist."
@@ -191,6 +197,11 @@ en:
           pending: "Pending"
           open: "Open"
           closed: "Closed"
+      course_detail:
+        statuses:
+          pending: "Pending"
+          open: "Open"
+          finished: "Finished"
       task:
         name: "Task name:"
         description: "Task description"

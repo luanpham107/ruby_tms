@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post "/add_existing_user_to_course", to: "user_courses#create"
       get "/search_subject_by_name", to: "searchs#search_subject_by_name"
       post "/add_subject_by_name", to: "course_details#create"
+      post "/update_subject_status", to: "course_details#update"
 
       resources :subjects, except: %i(index destroy) do
           resources :tasks, only: %i(show edit update)

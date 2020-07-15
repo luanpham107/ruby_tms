@@ -1,0 +1,27 @@
+$(document).on('turbolinks:load', function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $('[name^="select_subject_status"]').change(function (event) {
+
+    var subject_id = ($(this).parent().find("#subject_id").val());
+    var course_id = $('#course_id').val();
+    var new_status = $(this).val();
+    if (new_status == '')
+    return;
+
+    $.ajax({
+      url: '/admin/update_subject_status',
+      type: 'POST',
+      dataType: 'script',
+      data: {
+        status: new_status,
+        subject_id: subject_id,
+        course_id: course_id
+      }
+    });
+  });
+});
