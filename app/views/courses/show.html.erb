@@ -1,0 +1,45 @@
+<%= provide :title, t("courses.show.title") %>
+<h3><%= @course.name %></h3>
+<div class="col-md-6">
+  <p><%= @course.description %></p>
+  <p><%= @course.status.humanize %></p>
+</div>
+<div class="col-md-12">
+  <div class="row">
+   <div id="show_member">
+    <% if @users %>
+      <h3><%= t(".number_member", number: @course.users.count) %></h3>
+      <ol>
+        <%= render @users %>
+      </ol>
+       <%= will_paginate @users, previous_label: t("courses.show.previous"), next_label: t("courses.show.next"), param_name: "user_page" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="table-responsive table-scroll-custom">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col"><%= t "courses.add_existing_subject.table_no" %></th>
+        <th scope="col"><%= t "courses.add_existing_subject.table_name" %></th>
+        <th scope="col"><%= t "courses.add_existing_subject.table_description" %></th>
+        <th scope="col"><%= t "courses.add_existing_subject.table_status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @added_subjects.present? %>
+        <% @added_subjects.each_with_index do |s, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td>
+            <%= link_to s.name, [@course, s] %>
+          </td>
+          <td><%= s.description %></td>
+        </tr>
+        <% end %>
+      <% else %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

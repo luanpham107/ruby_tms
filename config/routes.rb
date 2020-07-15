@@ -19,5 +19,12 @@ Rails.application.routes.draw do
       resources :courses, except: :destroy
       resources :user_courses, only: :create
     end
+
+    resources :courses, only: :show do
+      resources :subjects, only: :show do
+        resources :tasks, only: :show
+      end
+    end
+
   end
 end
