@@ -27,5 +27,6 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :user_subjects, only: :create
   end
 end

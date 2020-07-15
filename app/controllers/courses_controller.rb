@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :load_course, only: :show
 
   def show
-    @users = @course.users.search_by_name_role.paginate(page: params[:user_page],
+    @users = @course.users.sort_by_name_role.paginate(page: params[:user_page],
       per_page: Settings.course.show.paginate.member)
     @added_subjects = @course.subjects.newest
   end

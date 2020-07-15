@@ -25,6 +25,7 @@
         <th scope="col"><%= t "courses.add_existing_subject.table_name" %></th>
         <th scope="col"><%= t "courses.add_existing_subject.table_description" %></th>
         <th scope="col"><%= t "courses.add_existing_subject.table_status" %></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -32,10 +33,18 @@
         <% @added_subjects.each_with_index do |s, index| %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td>
-            <%= link_to s.name, [@course, s] %>
-          </td>
+          <td> <%= link_to s.name, [@course, s] %> </td>
           <td><%= s.description %></td>
+          <td>
+            <% if s.user_subjects.present? %>
+              <%= select_tag(:user_subjects, options_for_select(statuses_generator_subject, s.user_subjects.first.status), class: "form-control") %>
+            <% end %>
+          </td>
+          <td>
+            <% if s.user_subjects.check_exist(current_user.id).blank? %>
+              <%= render "create_subject_form", subject: s, course: @course %>
+            <% end %>
+          </td>
         </tr>
         <% end %>
       <% else %>

@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_secure_password
 
   # scope:
-  scope :search_by_name_role, ->{order("name ASC, role")}
+  scope :sort_by_name_role, ->{order(:name, :role)}
   scope :search, ->(name, not_in){where "name like ? and id not in (?) ", "%#{name}%", not_in}
   scope :search_by_ids, ->(ids){where "id in (?)", ids}
 end
