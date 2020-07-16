@@ -172,6 +172,7 @@ en:
       previous: "Previous page"
       next: "Next page"
       number_task: "Task: (%{number})"
+      status: "Status of subject: %{status}"
     load_subject:
       not_found: "Subject is not existing"
   tasks:
@@ -181,6 +182,8 @@ en:
       description: "Task description : %{description}"
     load_task:
       not_found: "Task is not existing"
+    task:
+      update_task: "Update task"
   user_subjects:
     create:
       close_course: "This course have closed by trainer"
@@ -190,6 +193,19 @@ en:
       failed: "Starting subject failed"
     load_subject_within_course:
       not_found: "This subject is not existing within course"
+  process_tasks:
+    update:
+      success: "Update task is success"
+    load_subject_within_course:
+      not_found: "This subject is not existing within course"
+    load_process_task:
+      not_found: "This task is not existing"
+    check_status_of_course:
+      message: "Course is pending or closed by admin"
+    admin_check_status_of_subject_within_course:
+      message: "Subject is pending or finished by admin"
+    member_check_status_of_subject_within_course:
+      message: "Subject is pending or finished by you"
   activerecord:
     attributes:
       user:

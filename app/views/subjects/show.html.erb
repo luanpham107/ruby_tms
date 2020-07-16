@@ -5,14 +5,20 @@
     <p><%= t ".name", name: @subject.name %></p>
     <p><%= t ".description", description: @subject.description %></p>
     <p><%= t ".duration", duration: @subject.duration %></p>
+    <p><%= t ".status", status: trainee_show_subject_status %></p>
   </div>
 </div>
 <div id="show_task">
   <% if @tasks %>
+    <%= hidden_field_tag :course_id, @course.id %>
+    <%= hidden_field_tag :subject_id, @subject.id %>
     <h3><%= t(".number_task", number: @subject.tasks.count) %></h3>
     <ol>
       <%= render @tasks %>
     </ol>
-    <%= will_paginate @tasks, previous_label: t("subjects.show.previous"), next_label: t("subjects.show.next") %>
   <% end %>
 </div>
+<% if @tasks %>
+  <%= will_paginate @tasks, previous_label: t("subjects.show.previous"), next_label: t("subjects.show.next") %>
+<% end %>
+<%= javascript_pack_tag "subject_show", "data-turbolinks-track": "reload" %>

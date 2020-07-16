@@ -172,6 +172,7 @@ vi:
       previous: "Trang trước"
       next: "Trang sau"
       number_task: "Tác vụ: (%{number})"
+      status: "Trạng thái của môn học: %{status}"
     load_subject:
       not_found: "Môn học không tồn tại"
   tasks:
@@ -181,6 +182,8 @@ vi:
       description: "Mô tả tác vụ : %{description}"
     load_task:
       not_found: "Tác vụ không tồn tại"
+    task:
+      update_task: "Cập nhật tác vụ"
   user_subjects:
     create:
       close_course: "Khóa học này đã bị đóng bởi người đào tạo"
@@ -190,6 +193,19 @@ vi:
       failed: "Bắt đầu khóa học thất bại"
     load_subject_within_course:
       not_found: "Môn học này không tồn tại trong khóa học hiện tại"
+  process_tasks:
+    update:
+      success: "Cập nhật tác vụ thành công"
+    load_subject_within_course:
+      not_found: "Môn học này không tồn tại trong khóa học hiện tại"
+    load_process_task:
+      not_found: "Tác vụ này không tồn tại"
+    check_status_of_course:
+      message: "Khóa học đang chờ xử lý hoặc đóng bởi quản trị viên"
+    admin_check_status_of_subject_within_course:
+      message: "Môn học đang chờ xử lý hoặc kết thúc bởi quản trị viên"
+    member_check_status_of_subject_within_course:
+      message: "Môn học đang chờ xử lý hoặc kết thúc bởi bạn"
   activerecord:
     attributes:
       user:
