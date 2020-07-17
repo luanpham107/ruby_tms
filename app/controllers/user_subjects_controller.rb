@@ -72,7 +72,7 @@ class UserSubjectsController < ApplicationController
     @user_subject = current_user.user_subjects.find_by subject_id: params[:subject_id]
     return @user_subject
 
-    flash[:warning] =  t "user_subjects.load_user_subject.not_found"
+    flash[:warning] = t "user_subjects.load_user_subject.not_found"
     redirect_to @course
   end
 end

@@ -9,6 +9,10 @@ class Admin::SubjectsController < ApplicationController
     @subject.tasks.new
   end
 
+  def index
+    @subjects = Subject.sort_by_name
+  end
+
   def show
     @tasks = @subject.tasks.sort_by_name.paginate(page: params[:page],
       per_page: Settings.subject.show.paginate.task)

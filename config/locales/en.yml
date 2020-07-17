@@ -30,11 +30,14 @@ en:
         setting: "Setting"
         log_out: "Log out"
         log_in: "Log in"
-        subject: "Subject"
         course:
           link: "Course"
-          visit: "Visit your course"
+          visit: "View all course"
           new: "Make a new course"
+        subject:
+          link: "Subject"
+          visit: "View all course"
+          new: "Make a new subject"
       action:
         edit: "Edit"
         delete: "Delete"
@@ -42,6 +45,9 @@ en:
       new:
         title: "Subject"
         create_new_subject: "Create new subject"
+      index:
+        title: "View all subject"
+        no_subject: "There are no subject available"
       create:
         success_message: "Create a new subject success"
       show:
@@ -65,6 +71,11 @@ en:
         remove_task: "Remove task"
       show_task:
         number_task: "Task: (%{number})"
+      subject:
+        name: "Subject name : %{name}"
+        description: "Subject description : %{description}"
+        duration: "Subject duration (maximum, unit: day) : %{duration}"
+        btn_detail: "View detail"
     tasks:
       show:
         title: "View specfic task within specfic subject"

@@ -30,11 +30,14 @@ vi:
         setting: "Thiết lập"
         log_out: "Đăng xuất"
         log_in: "Đăng nhập"
-        subject: "Môn học"
         course:
           link: "Khóa học"
-          visit: "Xem khóa học của bạn"
+          visit: "Xem tất cả khóa học"
           new: "Tạo khóa học mới"
+        subject:
+          link: "Môn học"
+          visit: "Xem tất cả môn học"
+          new: "Tạo môn học mới"
       action:
         edit: "Chỉnh sửa"
         delete: "Xóa"
@@ -42,6 +45,9 @@ vi:
       new:
         title: "Môn học"
         create_new_subject: "Tạo môn học mới"
+      index:
+        title: "Xem tất cả môn học"
+        no_subject: "Không có sẵn môn học"
       create:
         success_message: "Tạo một môn học mới thành công"
       show:
@@ -65,6 +71,11 @@ vi:
         remove_task: "Xóa tác vụ"
       show_task:
         number_task: "Tác vụ: (%{number})"
+      subject:
+        name: "Tên môn học : %{name}"
+        description: "Mô tả môn học : %{description}"
+        duration: "Thời hạn môn học (tối da, đơn vị tính: ngày) : %{duration}"
+        btn_detail: "Xem chi tiết"
     tasks:
       show:
         title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
