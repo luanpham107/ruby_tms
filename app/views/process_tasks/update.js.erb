@@ -1,2 +1,3 @@
 $('show_task').html('<%= j render @tasks %>')
-alert(I18n.t("process_tasks.update.success"))
+$('.btn_update').removeAttr('disabled');
+alert(I18n.t('process_tasks.update.success'))

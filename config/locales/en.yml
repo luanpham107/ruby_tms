@@ -172,6 +172,8 @@ en:
       not_found: "Course is not existing"
     create_subject_form:
       start: "Start"
+    show_subject:
+      btn_update: "Update"
   subjects:
     show:
       title: "Show subject"
@@ -201,11 +203,17 @@ en:
       start_success: "Starting subject success"
       start_failed: "Starting subject failed"
       failed: "Starting subject failed"
+    update:
+      success: "Update subject is success"
+      failed : "Update subject is failed"
     load_subject_within_course:
       not_found: "This subject is not existing within course"
+    load_user_subject:
+      not_found: "Not found in database"
   process_tasks:
     update:
       success: "Update task is success"
+      failed: "Update task is failed"
     load_subject_within_course:
       not_found: "This subject is not existing within course"
     load_process_task:

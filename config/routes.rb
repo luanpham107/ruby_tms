@@ -26,13 +26,14 @@ Rails.application.routes.draw do
     end
 
     post "/update_process_task", to: "process_tasks#update"
+    post "/update_user_subject", to: "user_subjects#update"
     resources :courses, only: :show do
       resources :subjects, only: :show do
         resources :tasks, only: :show
       end
     end
 
-    resources :user_subjects, only: :create
+    resources :user_subjects, only: %i(create update)
     resources :process_tasks, only: :update
   end
 end

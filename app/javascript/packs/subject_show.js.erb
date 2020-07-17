@@ -6,6 +6,7 @@ $(document).ready(function(){
   });
 
   $('.btn_update').click(function(){
+    $(this).attr("disabled", true);
     var div = $(this).closest('div');
     var status = div.find('select').val();
     var task_id = div.find('#task_id').val()

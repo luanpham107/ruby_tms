@@ -5,8 +5,13 @@ class ProcessTasksController < ApplicationController
     :member_check_status_of_subject_within_course, :load_process_task, only: :update
 
   def update
-    @process_task.update status: ProcessTask.statuses[params[:status].to_s]
-    @tasks = @subject.tasks
+    ActiveRecord::Base.transaction do
+      @process_task.update! status: ProcessTask.statuses[params[:status].to_s]
+      @tasks = @subject.tasks
+    end
+  rescue
+    flash[:warning] = t "process_tasks.update.failed"
+    redirect_to @course
   end
 
   private
