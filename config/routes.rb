@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :subjects, except: %i(index destroy) do
           resources :tasks, only: %i(show edit update)
       end
-      resources :courses, except: :destroy do
+      resources :courses do
         resources :users, except: :destroy do
           resources :user_subjects, only: %i(index)
         end

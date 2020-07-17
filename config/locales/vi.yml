@@ -103,6 +103,12 @@ vi:
         previous: "Trước"
         next: "Sau"
         add: "Thêm thành viên mới"
+      deleted: "Khóa học này không tồn tại."
+      destroy:
+        link_delete_text: "Xóa khóa học"
+        success: "Xóa khóa học thành công"
+        fail: "Không thể xóa khóa học"
+        confirm: "Bạn chắc chắn?"
       edit:
         title: "Chỉnh sửa khóa học"
         submit_btn: "Cập nhập khóa học"

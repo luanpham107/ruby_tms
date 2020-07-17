@@ -7,7 +7,7 @@ class Admin::UserSubjectsController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course
+    return if @course && !@course.isdeleted?
 
     flash[:warning] = t ".load_course"
     redirect_to root_path
@@ -38,7 +38,7 @@ class Admin::UserSubjectsController < ApplicationController
   end
 
   def check_subject_status subject
-    us = UserSubject.find_by id: subject.id
+    us = UserSubject.find_by subject_id: subject.id
     us.present? ? us.status : I18n.t("admin.user_subjects.check_subject_status.not_start_yet")
   end
 
