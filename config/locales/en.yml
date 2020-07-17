@@ -103,6 +103,12 @@ en:
         previous: "Previous"
         next: "Next"
         add: "Add member"
+        deleted: "This course is not exist."
+      destroy:
+        link_delete_text: "Delete this course"
+        success: "Course was deleted successfully!"
+        fail: "Fail to delete this course"
+        confirm: "Are you sure?"
       edit:
         title: "Edit this course"
         submit_btn: "Update this course"

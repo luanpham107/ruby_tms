@@ -26,7 +26,7 @@ class Admin::UserCoursesController < ApplicationController
 
   def load_existing_course
     @existing_course = Course.find_by id: params[:course_id]
-    return if @existing_course
+    return if @existing_course && !@existing_course.isdeleted?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path

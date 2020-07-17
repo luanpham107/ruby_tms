@@ -1,7 +1,7 @@
 class Admin::CoursesController < ApplicationController
   before_action :logged_in_user
-  before_action :load_course, :load_added_subjects, only: %i(show edit update)
-  before_action :is_owner?, only: %i(edit update)
+  before_action :is_trainer?, only: %i(edit update destroy)
+  before_action :load_course, :load_added_subjects, only: %i(show edit update destroy)
   before_action :build_course, only: :create
 
   def new
@@ -21,7 +21,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.newest.paginate(page: params[:page])
+    @courses = Course.newest.avaiable.paginate(page: params[:page])
   end
 
   def show
@@ -37,6 +37,16 @@ class Admin::CoursesController < ApplicationController
       redirect_to [:admin, @course]
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @course.update isdeleted: Course.delete_states[:deleted]
+      flash[:success] = t ".success"
+      redirect_to admin_courses_path
+    else
+      flash[:danger] = t ".fail"
+      redirect_to admin_courses_path
     end
   end
 
@@ -56,7 +66,7 @@ class Admin::CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-    return if @course
+    return if @course && !@course.isdeleted
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path

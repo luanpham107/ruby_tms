@@ -34,7 +34,7 @@ class UserSubjectsController < ApplicationController
   def load_course
     course_id = params[:user_subject] ? params[:user_subject][:course_id] : params[:course_id]
     @course = Course.find_by id: course_id
-    return if @course
+    return if @course && !@course.isdeleted?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to @course
