@@ -39,7 +39,7 @@ class Admin::UserSubjectsController < ApplicationController
 
   def check_subject_status subject
     us = UserSubject.find_by subject_id: subject.id
-    us.present? ? us.status : I18n.t("admin.user_subjects.check_subject_status.not_start_yet")
+    us.present? && us.status.present?  ? us.status : I18n.t("admin.user_subjects.check_subject_status.not_start_yet")
   end
 
   def load_user_subject
