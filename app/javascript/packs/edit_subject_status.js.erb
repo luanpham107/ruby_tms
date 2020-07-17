@@ -1,10 +1,11 @@
-$(document).on('turbolinks:load', function () {
+$(document).ready(function () {
   $.ajaxSetup({
     headers: {
       'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  $(document).on('click', '[name^="select_subject_status"]', function(){
+
+  $(document).on('change', '[name^="select_subject_status"]', function(){
     $(this).attr('disabled', true);
     var subject_id = ($(this).parent().find("#subject_id").val());
     var course_id = $('#course_id').val();

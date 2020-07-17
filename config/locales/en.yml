@@ -36,7 +36,7 @@ en:
           new: "Make a new course"
         subject:
           link: "Subject"
-          visit: "View all course"
+          visit: "View all subjects"
           new: "Make a new subject"
       action:
         edit: "Edit"
